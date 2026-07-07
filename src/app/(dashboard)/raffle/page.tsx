@@ -661,7 +661,7 @@ export default function RafflePage() {
                   </select>
                 ) : (
                   <div style={{ padding: "12px 16px", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: 10, color: "rgba(255,200,200,0.9)", fontSize: "0.85rem" }}>
-                    You don't have any {selectedRaffle.chain} wallets linked. Go to your Profile to add one first.
+                    You don&apos;t have any {selectedRaffle.chain} wallets linked. Go to your Profile to add one first.
                   </div>
                 )}
               </div>
