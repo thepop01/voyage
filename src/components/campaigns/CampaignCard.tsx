@@ -5,11 +5,11 @@ interface CampaignCardProps {
 }
 
 const typeColors: Record<string, { bg: string; border: string; text: string }> = {
-  hybrid:    { bg: "rgba(124,58,237,0.1)",  border: "rgba(124,58,237,0.3)",  text: "var(--accent)" },
-  raffle:    { bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.3)", text: "#a78bfa" },
-  technical: { bg: "rgba(167,139,250,0.1)",   border: "rgba(167,139,250,0.3)",   text: "var(--success)" },
-  manual:    { bg: "rgba(167,139,250,0.1)",  border: "rgba(167,139,250,0.3)",  text: "var(--warning)" },
-  fcfs:      { bg: "rgba(236,72,153,0.1)",  border: "rgba(236,72,153,0.3)",  text: "#ec4899" },
+  hybrid:    { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  raffle:    { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  technical: { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  manual:    { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  fcfs:      { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
 }
 
 const bannerGradients = [
@@ -81,8 +81,8 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
           width: 8,
           height: 8,
           borderRadius: "50%",
-          background: isActive ? "var(--success)" : isClosed ? "var(--danger)" : "var(--muted)",
-          boxShadow: isActive ? "0 0 8px var(--success)" : "none",
+          background: "#fff",
+          boxShadow: "0 0 8px #fff",
         }} />
       </div>
 
@@ -159,9 +159,9 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
               fontWeight: 700,
               fontFamily: "var(--font-display)",
               whiteSpace: "nowrap",
-              background: "rgba(124,58,237,0.12)",
-              border: "1px solid rgba(139,92,246,0.3)",
-              color: "#c4b5fd",
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.15)",
+              color: "#fff",
             }}>
               🏆 {campaign.prize_name || (campaign.reward_pool ? `$${campaign.reward_pool}` : "TBD")}
             </div>
@@ -176,7 +176,7 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
             <div style={{
               fontSize: "0.85rem",
               fontWeight: 700,
-              color: isUrgent ? "var(--warning)" : "var(--fg-light)",
+              color: "#fff",
               whiteSpace: "nowrap",
             }}>
               {timeLabel}
@@ -192,7 +192,7 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
             <div style={{
               fontSize: "0.78rem",
               fontWeight: 700,
-              color: isActive ? "var(--success)" : isClosed ? "var(--danger)" : "var(--muted)",
+              color: "#fff",
             }}>
               {isActive ? "Active" : isClosed ? "Closed" : "Draft"}
             </div>
@@ -209,10 +209,10 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
               borderRadius: 8,
               textDecoration: "none",
               whiteSpace: "nowrap",
-              background: isActive ? "linear-gradient(135deg, var(--accent), #60a5fa)" : undefined,
-              color: isActive ? "#fff" : undefined,
+              background: isActive ? "#fff" : undefined,
+              color: isActive ? "#000" : undefined,
               border: isActive ? "none" : undefined,
-              boxShadow: isActive ? "0 3px 12px rgba(124,58,237,0.35)" : undefined,
+              boxShadow: isActive ? "0 3px 12px rgba(255,255,255,0.15)" : undefined,
             }}
           >
             {isActive ? "View →" : isClosed ? "View Results" : "Preview"}
