@@ -115,8 +115,8 @@ export default function HallOfFamePage() {
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)"
-              e.currentTarget.style.boxShadow = `0 24px 40px ${ann.typeColor}33`
-              e.currentTarget.style.borderColor = ann.typeColor
+              e.currentTarget.style.boxShadow = `0 24px 40px ${ann.typeColor || "#fff"}33`
+              e.currentTarget.style.borderColor = ann.typeColor || "#fff"
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.transform = "translateY(0)"
