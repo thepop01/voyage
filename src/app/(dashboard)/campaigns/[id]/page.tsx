@@ -331,9 +331,9 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
                     style={{ 
                       width: "100%", 
                       padding: 16, 
-                      background: isClosed ? "rgba(255,255,255,0.05)" : "#fff",
+                      background: isClosed ? "rgba(255,255,255,0.05)" : "#E6F2DD",
                       border: "none",
-                      color: isClosed ? "var(--muted)" : "#fff",
+                      color: isClosed ? "var(--muted)" : "#000",
                       fontWeight: 700,
                       fontSize: "0.9rem",
                       borderRadius: 8,

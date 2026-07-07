@@ -519,10 +519,10 @@ export default function RafflePage() {
                     onClick={() => handleOpenModal(raffle.id)}
                     style={{
                       padding: "8px 20px",
-                      background: "rgba(255,255,255,0.08)",
-                      border: "1px solid rgba(255,255,255,0.15)",
+                      background: "#E6F2DD",
+                      border: "1px solid rgba(230,242,221,0.4)",
                       borderRadius: 10,
-                      color: "#fff",
+                      color: "#000",
                       fontSize: "0.78rem",
                       fontWeight: 700,
                       cursor: "pointer",
@@ -531,12 +531,12 @@ export default function RafflePage() {
                     }}
                     onMouseEnter={e => {
                       const el = e.currentTarget
-                      el.style.background = "rgba(124,58,237,0.2)"
+                      el.style.background = "rgba(230,242,221,0.85)"
                       el.style.transform = "scale(1.03)"
                     }}
                     onMouseLeave={e => {
                       const el = e.currentTarget
-                      el.style.background = "rgba(124,58,237,0.12)"
+                      el.style.background = "#E6F2DD"
                       el.style.transform = "scale(1)"
                     }}
                   >

@@ -154,7 +154,7 @@ export default function AdminPage() {
                     <input type="number" className="glass-input" placeholder="e.g. 50" />
                   </div>
                 </div>
-                <button type="button" className="glass-button" style={{ marginTop: 16, padding: "16px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 8, fontSize: "1rem", fontWeight: 700 }}>
+                <button type="button" className="glass-button" style={{ marginTop: 16, padding: "16px", borderRadius: 8, fontSize: "1rem", fontWeight: 700 }}>
                   Publish Campaign
                 </button>
               </form>
@@ -216,7 +216,7 @@ export default function AdminPage() {
                 <hr style={{ border: "none", borderBottom: "1px solid var(--border)", margin: "8px 0" }} />
                 <div style={{ display: "flex", justifyContent: "flex-end", gap: 16 }}>
                   <button type="button" className="glass-button" style={{ padding: "12px 24px", color: "var(--fg-light)" }}>Save Draft</button>
-                  <button type="submit" className="glass-button" style={{ background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", padding: "12px 32px", fontWeight: 700 }}>Create Raffle</button>
+                  <button type="submit" className="glass-button" style={{ padding: "12px 32px", fontWeight: 700 }}>Create Raffle</button>
                 </div>
               </form>
             </div>
@@ -257,7 +257,7 @@ export default function AdminPage() {
                 ))}
               </div>
 
-              <button className="glass-button" style={{ padding: "12px 24px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)" }}>
+              <button className="glass-button" style={{ padding: "12px 24px" }}>
                 + Add New Task
               </button>
             </div>
@@ -288,7 +288,7 @@ export default function AdminPage() {
                 ))}
               </div>
 
-              <button className="glass-button" style={{ padding: "12px 24px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)" }}>
+              <button className="glass-button" style={{ padding: "12px 24px" }}>
                 + New Announcement
               </button>
             </div>

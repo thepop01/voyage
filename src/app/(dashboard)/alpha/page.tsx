@@ -70,12 +70,12 @@ const CALLERS: AlphaCaller[] = [
     stats: { Polymarket: { total: 31, wins: 18, likes: 0 } },
   },
   {
-    id: "c3", username: "FlipKing", handle: "@flipking", avatar: "👑", avatarcolor: "#fff",
+    id: "c3", username: "FlipKing", handle: "@flipking", avatar: "👑", avatarColor: "#fff",
     totalAlphas: 8, followers: 389, bio: "Meme coin flipper. Early in most memes that matter.", verified: false,
     stats: { Meme: { total: 2, wins: 1, likes: 0 } },
   },
   {
-    id: "c4", username: "AlphaQuant", handle: "@alphaquant", avatar: "", avatarcolor: "#fff",
+    id: "c4", username: "AlphaQuant", handle: "@alphaquant", avatar: "", avatarColor: "#fff",
     totalAlphas: 22, followers: 976, bio: "Quant trader. Stocks & macro calls with data-backed thesis.", verified: true,
     xLink: "https://x.com/alphaquant",
     stats: { Stock: { total: 15, wins: 11, likes: 0 }, Crypto: { total: 7, wins: 4, likes: 0 } },
