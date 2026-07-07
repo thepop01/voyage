@@ -40,7 +40,7 @@ export default function CampaignsPage() {
               boxShadow: "0 0 8px var(--success)",
             }} />
             <div>
-              <div style={{ fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--accent)" }}>
+              <div style={{ fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>
                 Active now
               </div>
               <div style={{ fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "var(--fg)" }}>
