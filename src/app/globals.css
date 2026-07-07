@@ -86,15 +86,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Glass button */
 .glass-button {
-  background: #FBEFEF;
+  background: #E6F2DD;
   color: #000;
-  border: 1px solid rgba(251, 239, 239, 0.35);
+  border: 1px solid rgba(230, 242, 221, 0.35);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 .glass-button:hover {
-  background: rgba(251, 239, 239, 0.85);
-  border-color: rgba(251, 239, 239, 0.55);
+  background: rgba(230, 242, 221, 0.85);
+  border-color: rgba(230, 242, 221, 0.55);
 }
 
 /* Glass icon */

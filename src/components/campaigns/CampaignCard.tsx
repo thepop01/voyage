@@ -81,7 +81,7 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
           width: 8,
           height: 8,
           borderRadius: "50%",
-          background: "#FBEFEF",
+          background: "#E6F2DD",
           boxShadow: "0 0 8px #fff",
         }} />
       </div>
