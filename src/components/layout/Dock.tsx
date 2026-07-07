@@ -13,12 +13,12 @@ const dockItems = [
       <svg className="dock-icon-3d" viewBox="0 0 48 48" fill="none">
         <defs>
           <linearGradient id="dash-g1" x1="0" y1="0" x2="48" y2="48">
-            <stop offset="0%" stopColor="#fff" />
-            <stop offset="100%" stopColor="#fff" />
+            <stop offset="0%" stopColor="#93C5FD" />
+            <stop offset="100%" stopColor="#7c3aed" />
           </linearGradient>
           <linearGradient id="dash-g2" x1="0" y1="0" x2="48" y2="48">
-            <stop offset="0%" stopColor="#fff" />
-            <stop offset="100%" stopColor="#fff" />
+            <stop offset="0%" stopColor="#60A5FA" />
+            <stop offset="100%" stopColor="#2563EB" />
           </linearGradient>
         </defs>
         <rect x="6" y="6" width="20" height="20" rx="6" fill="url(#dash-g1)" opacity="0.65" />
@@ -41,8 +41,8 @@ const dockItems = [
       <svg className="dock-icon-3d" viewBox="0 0 48 48" fill="none">
         <defs>
           <linearGradient id="tasks-g1" x1="0" y1="0" x2="48" y2="48">
-            <stop offset="0%" stopColor="#fff" />
-            <stop offset="100%" stopColor="#fff" />
+            <stop offset="0%" stopColor="#C4B5FD" />
+            <stop offset="100%" stopColor="#7C3AED" />
           </linearGradient>
         </defs>
         <rect x="6" y="8" width="36" height="32" rx="10" fill="url(#tasks-g1)" opacity="0.8" />
@@ -58,12 +58,12 @@ const dockItems = [
       <svg className="dock-icon-3d" viewBox="0 0 48 48" fill="none">
         <defs>
           <linearGradient id="rank-g1" x1="0" y1="48" x2="0" y2="0">
-            <stop offset="0%" stopColor="#fff" />
-            <stop offset="100%" stopColor="#fff" />
+            <stop offset="0%" stopColor="#7c3aed" />
+            <stop offset="100%" stopColor="#EC4899" />
           </linearGradient>
           <linearGradient id="rank-g2" x1="0" y1="48" x2="0" y2="0">
-            <stop offset="0%" stopColor="#fff" />
-            <stop offset="100%" stopColor="#fff" />
+            <stop offset="0%" stopColor="#60A5FA" />
+            <stop offset="100%" stopColor="#a78bfa" />
           </linearGradient>
         </defs>
         <rect x="6" y="26" width="10" height="16" rx="4" fill="url(#rank-g2)" opacity="0.6" />
@@ -80,8 +80,8 @@ const dockItems = [
       <svg className="dock-icon-3d" viewBox="0 0 48 48" fill="none">
         <defs>
           <linearGradient id="ticket-g1" x1="0" y1="0" x2="48" y2="48">
-            <stop offset="0%" stopColor="#fff" />
-            <stop offset="100%" stopColor="#fff" />
+            <stop offset="0%" stopColor="#FBBF24" />
+            <stop offset="100%" stopColor="#D97706" />
           </linearGradient>
         </defs>
         <path d="M8 14 h32 v6 a4 4 0 0 0 0 8 v6 h-32 v-6 a4 4 0 0 0 0 -8 v-6 z" fill="url(#ticket-g1)" opacity="0.85" />
@@ -111,8 +111,8 @@ export function Dock() {
         <svg className="dock-icon-3d" viewBox="0 0 48 48" fill="none">
           <defs>
             <linearGradient id="admin-g1" x1="0" y1="0" x2="48" y2="48">
-              <stop offset="0%" stopColor="#fff" />
-              <stop offset="100%" stopColor="#fff" />
+              <stop offset="0%" stopColor="#F87171" />
+              <stop offset="100%" stopColor="#DC2626" />
             </linearGradient>
           </defs>
           <rect x="6" y="8" width="36" height="32" rx="8" fill="url(#admin-g1)" opacity="0.85" />
