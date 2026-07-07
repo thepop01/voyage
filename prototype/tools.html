@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools - Voyage</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+  <div class="layout">
+      <!-- ===== TOP BAR ===== -->
+      <header class="topbar dense">
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <h2 style="margin-bottom: 0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--fg);">Voyage</h2>
+          <input type="text" placeholder="Search tools..." style="width: 240px;">
+        </div>
+        <div style="display: flex; gap: 4px; align-items: center;">
+          <nav class="nav-links">
+            <a href="dashboard.html" class="nav-link">Dash</a>
+            <a href="campaigns.html" class="nav-link">Campaign</a>
+            <a href="tasks.html" class="nav-link">Tasks</a>
+            <a href="leaderboard.html" class="nav-link">Stats</a>
+            <a href="rewards.html" class="nav-link">Earn</a>
+            <a href="alpha.html" class="nav-link">Alpha</a>
+            <a href="tools.html" class="nav-link active">Tools</a>
+            <a href="admin.html" class="nav-link">Admin</a>
+          </nav>
+          <div style="width: 1px; height: 24px; background: var(--border-subtle); margin: 0 12px;"></div>
+          <!-- Notifications -->
+          <button style="background: transparent; border: none; padding: 6px; border-radius: 8px; cursor: pointer; color: var(--muted); display: flex; align-items: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+          <!-- User -->
+          <a href="profile.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 5px 10px; background: rgba(255,255,255,0.5); border: 1px solid var(--border); border-radius: 10px;">
+            <span style="font-size: 0.82rem; font-weight: 600; color: var(--fg);">@ninja_user</span>
+            <div style="width: 26px; height: 26px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+          </a>
+        </div>
+      </header>
+
+    <div class="page-content">
+      <div style="margin-bottom: 64px;">
+        <div class="badge accent" style="margin-bottom: 12px;">Utility Hub</div>
+        <h1 style="margin-bottom: 8px;">Research Tools</h1>
+        <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Track wallets, check whitelists & analyze on-chain data</p>
+      </div>
+
+      <!-- Analytics Button -->
+      <div style="display: flex; justify-content: center; margin-bottom: 32px;">
+        <button onclick="showAnalytics()" class="btn primary" style="padding: 12px 24px; font-size: 1rem; display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--accent), #60a5fa);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+          View Analytics Dashboard
+        </button>
+      </div>
+
+      <!-- 2-Column Layout -->
+      <div class="split" style="grid-template-columns: 2fr 1fr; gap: 32px;">
+        
+        <!-- Main Content -->
+        <main>
+          
+          <!-- Polymarket Wallet Tracker -->
+          <div class="dense-card" style="margin-bottom: 32px; padding: 24px; background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.06)); border-color: rgba(59,130,246,0.2);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/></svg>
+              </div>
+              <div>
+                <h2 style="margin: 0; font-size: 1.3rem;">Polymarket Multi-Wallet Tracker</h2>
+                <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.9rem;">Track multiple wallets with real-time trade notifications</p>
+              </div>
+            </div>
+            
+            <!-- Add Wallet Section -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;">Add Wallet to Track</label>
+              <div style="display: flex; gap: 12px;">
+                <input type="text" placeholder="0x742d35Cc6634C0532925a3b8D6aC6...9032 or vitalik.eth" style="flex: 1; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,0.8);">
+                <button class="btn primary" style="padding: 12px 20px; white-space: nowrap;">+ Add Wallet</button>
+              </div>
+              <p style="margin: 6px 0 0; font-size: 0.8rem; color: var(--muted);">💡 Add up to 50 wallets for tracking. Notifications enabled for all tracked wallets.</p>
+            </div>
+
+            <!-- Tracked Wallets Dashboard -->
+            <div style="background: rgba(255,255,255,0.6); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <h4 style="margin: 0; color: var(--accent);">Your Tracked Wallets (3)</h4>
+                <button class="dense-badge" style="background: var(--success); color: white; border: none; cursor: pointer; padding: 4px 8px;">🔔 Live Alerts ON</button>
+              </div>
+              
+              <!-- Wallet 1 -->
+              <div style="background: rgba(255,255,255,0.8); border-radius: 6px; padding: 12px; margin-bottom: 12px; border-left: 4px solid var(--accent); cursor: pointer; transition: all 0.2s ease;" onclick="showWalletDetails('0x742d...9032')">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; font-family: monospace; color: var(--accent); text-decoration: underline;">0x742d...9032</span>
+                    <span class="dense-badge accent" style="font-size: 0.7rem;">Top Trader</span>
+                    <span style="font-size: 0.7rem; color: var(--muted);">👆 Click for all trades</span>
+                  </div>
+                  <button style="background: transparent; border: none; color: var(--muted); cursor: pointer; padding: 2px;" onclick="event.stopPropagation();">✕</button>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 8px;">
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">$45.7K</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Total Volume</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--success);">+247%</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">30d ROI</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">73%</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Win Rate</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--accent);">2.4x</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Avg Multiplier</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">12</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Active Positions</div>
+                  </div>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--success); background: rgba(34,197,94,0.1); padding: 4px 8px; border-radius: 4px;">
+                  <strong>🔥 New Trade:</strong> Trump 2024 "Yes" - $2,400 bet @ 68¢ (2 mins ago)
+                </div>
+              </div>
+
+              <!-- Wallet 2 -->
+              <div style="background: rgba(255,255,255,0.8); border-radius: 6px; padding: 12px; margin-bottom: 12px; border-left: 4px solid #10b981; cursor: pointer; transition: all 0.2s ease;" onclick="showWalletDetails('polywhale.eth')">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; font-family: monospace; color: #10b981; text-decoration: underline;">polywhale.eth</span>
+                    <span class="dense-badge" style="background: rgba(16,185,129,0.1); color: #10b981; border-color: #10b981; font-size: 0.7rem;">Whale</span>
+                    <span style="font-size: 0.7rem; color: var(--muted);">👆 Click for all trades</span>
+                  </div>
+                  <button style="background: transparent; border: none; color: var(--muted); cursor: pointer; padding: 2px;" onclick="event.stopPropagation();">✕</button>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 8px;">
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">$127K</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Total Volume</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--success);">+189%</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">30d ROI</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">81%</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Win Rate</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--accent);">3.2x</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Avg Multiplier</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">24</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Active Positions</div>
+                  </div>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--warning); background: rgba(245,158,11,0.1); padding: 4px 8px; border-radius: 4px;">
+                  <strong>⚡ Position Update:</strong> Fed Rate Cut "No" - Increased to $8,900 (5 mins ago)
+                </div>
+              </div>
+
+              <!-- Wallet 3 -->
+              <div style="background: rgba(255,255,255,0.8); border-radius: 6px; padding: 12px; border-left: 4px solid #8b5cf6; cursor: pointer; transition: all 0.2s ease;" onclick="showWalletDetails('0x891a...4e7f')">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; font-family: monospace; color: #8b5cf6; text-decoration: underline;">0x891a...4e7f</span>
+                    <span class="dense-badge" style="background: rgba(239,68,68,0.1); color: #ef4444; border-color: #ef4444; font-size: 0.7rem;">New</span>
+                    <span style="font-size: 0.7rem; color: var(--muted);">👆 Click for all trades</span>
+                  </div>
+                  <button style="background: transparent; border: none; color: var(--muted); cursor: pointer; padding: 2px;" onclick="event.stopPropagation();">✕</button>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 8px;">
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">$8.2K</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Total Volume</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--success);">+67%</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">30d ROI</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">64%</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Win Rate</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--accent);">1.8x</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Avg Multiplier</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 700; color: var(--fg);">7</div>
+                    <div style="font-size: 0.65rem; color: var(--muted);">Active Positions</div>
+                  </div>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); font-style: italic; padding: 4px 8px;">
+                  No recent activity - Last trade 2 hours ago
+                </div>
+              </div>
+            </div>
+
+            <!-- Notification Settings -->
+            <div style="background: rgba(59,130,246,0.05); border-radius: 6px; padding: 12px; border: 1px dashed rgba(59,130,246,0.2);">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <span style="font-weight: 600; font-size: 0.9rem;">Alert Settings</span>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-size: 0.8rem;">
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" checked style="margin: 0;">
+                  <span>New Trades (any amount)</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" checked style="margin: 0;">
+                  <span>Large Bets (>$1K)</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" checked style="margin: 0;">
+                  <span>Position Wins/Losses</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" style="margin: 0;">
+                  <span>Daily Summaries</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Wallet Details Modal/Panel (Initially Hidden) -->
+            <div id="wallet-details" style="display: none; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 20px; margin-top: 16px; border: 2px solid var(--accent);">
+              
+              <!-- Header -->
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid var(--border);">
+                <div>
+                  <h3 style="margin: 0; color: var(--accent); display: flex; align-items: center; gap: 8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z"/></svg>
+                    <span id="wallet-address">0x742d...9032</span> - All Open Positions
+                  </h3>
+                  <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--muted);">12 active positions • Last updated 2 mins ago</p>
+                </div>
+                <button onclick="closeWalletDetails()" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--muted);">✕</button>
+              </div>
+
+              <!-- Sorting Options -->
+              <div style="display: flex; gap: 12px; margin-bottom: 16px; align-items: center;">
+                <span style="font-weight: 600; font-size: 0.9rem;">Sort by:</span>
+                <button class="dense-badge accent" style="cursor: pointer; background: var(--accent); color: white;" onclick="sortTrades('latest')">Latest Trade</button>
+                <button class="dense-badge" style="cursor: pointer;" onclick="sortTrades('amount')">Highest Amount</button>
+                <button class="dense-badge" style="cursor: pointer;" onclick="sortTrades('roi')">Best ROI</button>
+                <button class="dense-badge" style="cursor: pointer;" onclick="sortTrades('probability')">Probability</button>
+              </div>
+
+              <!-- Open Positions Table -->
+              <div style="max-height: 400px; overflow-y: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                  <thead style="background: rgba(59,130,246,0.1); position: sticky; top: 0;">
+                    <tr>
+                      <th style="padding: 8px; text-align: left; font-size: 0.8rem; color: var(--muted);">Market</th>
+                      <th style="padding: 8px; text-align: center; font-size: 0.8rem; color: var(--muted);">Position</th>
+                      <th style="padding: 8px; text-align: center; font-size: 0.8rem; color: var(--muted);">Amount</th>
+                      <th style="padding: 8px; text-align: center; font-size: 0.8rem; color: var(--muted);">Avg Price</th>
+                      <th style="padding: 8px; text-align: center; font-size: 0.8rem; color: var(--muted);">Current</th>
+                      <th style="padding: 8px; text-align: center; font-size: 0.8rem; color: var(--muted);">P&L</th>
+                      <th style="padding: 8px; text-align: center; font-size: 0.8rem; color: var(--muted);">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody id="trades-table-body">
+                    <tr style="border-bottom: 1px solid var(--border-subtle);">
+                      <td style="padding: 10px; font-size: 0.85rem; font-weight: 600;">Trump 2024 Winner</td>
+                      <td style="padding: 10px; text-align: center;"><span class="dense-badge" style="background: rgba(34,197,94,0.1); color: var(--success); border-color: var(--success);">Yes</span></td>
+                      <td style="padding: 10px; text-align: center; font-weight: 700;">$2,400</td>
+                      <td style="padding: 10px; text-align: center;">68¢</td>
+                      <td style="padding: 10px; text-align: center; font-weight: 600;">71¢</td>
+                      <td style="padding: 10px; text-align: center; color: var(--success); font-weight: 700;">+$106</td>
+                      <td style="padding: 10px; text-align: center; font-size: 0.8rem; color: var(--muted);">2m ago</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-subtle);">
+                      <td style="padding: 10px; font-size: 0.85rem; font-weight: 600;">Fed Rate Cut Dec 2024</td>
+                      <td style="padding: 10px; text-align: center;"><span class="dense-badge" style="background: rgba(239,68,68,0.1); color: #ef4444; border-color: #ef4444;">No</span></td>
+                      <td style="padding: 10px; text-align: center; font-weight: 700;">$1,800</td>
+                      <td style="padding: 10px; text-align: center;">42¢</td>
+                      <td style="padding: 10px; text-align: center; font-weight: 600;">38¢</td>
+                      <td style="padding: 10px; text-align: center; color: #ef4444; font-weight: 700;">-$72</td>
+                      <td style="padding: 10px; text-align: center; font-size: 0.8rem; color: var(--muted);">1h ago</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-subtle);">
+                      <td style="padding: 10px; font-size: 0.85rem; font-weight: 600;">ETH $5K EOY 2024</td>
+                      <td style="padding: 10px; text-align: center;"><span class="dense-badge" style="background: rgba(34,197,94,0.1); color: var(--success); border-color: var(--success);">Yes</span></td>
+                      <td style="padding: 10px; text-align: center; font-weight: 700;">$3,200</td>
+                      <td style="padding: 10px; text-align: center;">34¢</td>
+                      <td style="padding: 10px; text-align: center; font-weight: 600;">41¢</td>
+                      <td style="padding: 10px; text-align: center; color: var(--success); font-weight: 700;">+$224</td>
+                      <td style="padding: 10px; text-align: center; font-size: 0.8rem; color: var(--muted);">3h ago</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-subtle);">
+                      <td style="padding: 10px; font-size: 0.85rem; font-weight: 600;">Bitcoin $100K by EOY</td>
+                      <td style="padding: 10px; text-align: center;"><span class="dense-badge" style="background: rgba(34,197,94,0.1); color: var(--success); border-color: var(--success);">Yes</span></td>
+                      <td style="padding: 10px; text-align: center; font-weight: 700;">$5,600</td>
+                      <td style="padding: 10px; text-align: center;">52¢</td>
+                      <td style="padding: 10px; text-align: center; font-weight: 600;">59¢</td>
+                      <td style="padding: 10px; text-align: center; color: var(--success); font-weight: 700;">+$392</td>
+                      <td style="padding: 10px; text-align: center; font-size: 0.8rem; color: var(--muted);">8h ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Summary Stats -->
+              <div style="background: rgba(59,130,246,0.05); border-radius: 6px; padding: 12px; margin-top: 16px; border: 1px dashed rgba(59,130,246,0.2);">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; text-align: center;">
+                  <div>
+                    <div style="font-size: 1rem; font-weight: 700; color: var(--fg);">$13,000</div>
+                    <div style="font-size: 0.75rem; color: var(--muted);">Total at Risk</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1rem; font-weight: 700; color: var(--success);">+$650</div>
+                    <div style="font-size: 0.75rem; color: var(--muted);">Unrealized P&L</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1rem; font-weight: 700; color: var(--accent);">49¢</div>
+                    <div style="font-size: 0.75rem; color: var(--muted);">Avg Entry Price</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1rem; font-weight: 700; color: var(--fg);">10/12</div>
+                    <div style="font-size: 0.75rem; color: var(--muted);">Profitable Positions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Analytics Dashboard Modal (Initially Hidden) -->
+            <div id="analytics-dashboard" style="display: none; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 20px; margin-top: 16px; border: 2px solid var(--accent);">
+              
+              <!-- Header -->
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid var(--border);">
+                <div>
+                  <h3 style="margin: 0; color: var(--accent); display: flex; align-items: center; gap: 8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                    Analytics Dashboard
+                  </h3>
+                  <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--muted);">Comprehensive analysis of tracked wallets and user performance</p>
+                </div>
+                <button onclick="closeAnalytics()" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--muted);">✕</button>
+              </div>
+
+              <!-- Overview Stats -->
+              <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px;">
+                <div class="dense-card" style="text-align: center; padding: 16px;">
+                  <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent);">127</div>
+                  <div style="font-size: 0.8rem; color: var(--muted);">Total Tracked Wallets</div>
+                </div>
+                <div class="dense-card" style="text-align: center; padding: 16px;">
+                  <div style="font-size: 1.8rem; font-weight: 700; color: var(--success);">$2.4M</div>
+                  <div style="font-size: 0.8rem; color: var(--muted);">Combined Volume</div>
+                </div>
+                <div class="dense-card" style="text-align: center; padding: 16px;">
+                  <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent);">76%</div>
+                  <div style="font-size: 0.8rem; color: var(--muted);">Avg Win Rate</div>
+                </div>
+                <div class="dense-card" style="text-align: center; padding: 16px;">
+                  <div style="font-size: 1.8rem; font-weight: 700; color: var(--success);">+18%</div>
+                  <div style="font-size: 0.8rem; color: var(--muted);">24h P&L</div>
+                </div>
+              </div>
+
+              <!-- Top Performers vs Worst Performers -->
+              <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+                
+                <!-- Top Performers -->
+                <div class="dense-card" style="padding: 16px;">
+                  <h4 style="margin: 0 0 16px; color: var(--success); display: flex; align-items: center; gap: 8px;">
+                    🏆 Top Performers (30d)
+                  </h4>
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px; background: rgba(34,197,94,0.05); border-radius: 4px;">
+                      <span style="font-family: monospace; font-size: 0.85rem;">polywhale.eth</span>
+                      <span style="color: var(--success); font-weight: 700;">+347%</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px; background: rgba(34,197,94,0.05); border-radius: 4px;">
+                      <span style="font-family: monospace; font-size: 0.85rem;">0x742d...9032</span>
+                      <span style="color: var(--success); font-weight: 700;">+247%</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px; background: rgba(34,197,94,0.05); border-radius: 4px;">
+                      <span style="font-family: monospace; font-size: 0.85rem;">cryptoking.eth</span>
+                      <span style="color: var(--success); font-weight: 700;">+189%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Worst Performers -->
+                <div class="dense-card" style="padding: 16px;">
+                  <h4 style="margin: 0 0 16px; color: #ef4444; display: flex; align-items: center; gap: 8px;">
+                    📉 Need Attention (30d)
+                  </h4>
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px; background: rgba(239,68,68,0.05); border-radius: 4px;">
+                      <span style="font-family: monospace; font-size: 0.85rem;">0x891a...4e7f</span>
+                      <span style="color: #ef4444; font-weight: 700;">-23%</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px; background: rgba(239,68,68,0.05); border-radius: 4px;">
+                      <span style="font-family: monospace; font-size: 0.85rem;">rookie.eth</span>
+                      <span style="color: #ef4444; font-weight: 700;">-45%</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px; background: rgba(239,68,68,0.05); border-radius: 4px;">
+                      <span style="font-family: monospace; font-size: 0.85rem;">0x123f...8abc</span>
+                      <span style="color: #ef4444; font-weight: 700;">-67%</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Market Analysis -->
+              <div class="dense-card" style="padding: 16px; margin-bottom: 20px;">
+                <h4 style="margin: 0 0 16px; color: var(--accent);">📊 Market Insights</h4>
+                <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                  <div>
+                    <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 4px;">Most Popular Market</div>
+                    <div style="font-weight: 700; color: var(--fg);">Trump 2024 Winner</div>
+                    <div style="font-size: 0.75rem; color: var(--accent);">342 active positions</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 4px;">Highest Volume Market</div>
+                    <div style="font-weight: 700; color: var(--fg);">Bitcoin $100K EOY</div>
+                    <div style="font-size: 0.75rem; color: var(--accent);">$847K total volume</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 4px;">Best ROI Market</div>
+                    <div style="font-weight: 700; color: var(--fg);">Fed Rate Cut</div>
+                    <div style="font-size: 0.75rem; color: var(--success);">+156% avg return</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NFT Analytics -->
+              <div class="dense-card" style="padding: 16px;">
+                <h4 style="margin: 0 0 16px; color: #a855f7;">🎨 NFT Tracker Analytics</h4>
+                <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                  <div style="text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--fg);">89</div>
+                    <div style="font-size: 0.7rem; color: var(--muted);">Tracked NFT Wallets</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--success);">247</div>
+                    <div style="font-size: 0.7rem; color: var(--muted);">Mints Detected (7d)</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--accent);">73%</div>
+                    <div style="font-size: 0.7rem; color: var(--muted);">Profitable Mint Rate</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--success);">$156K</div>
+                    <div style="font-size: 0.7rem; color: var(--muted);">Total Mint Profits</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NFT Multi-Wallet Whitelist Tracker -->
+          <div class="dense-card" style="margin-bottom: 32px; padding: 24px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <div style="width: 40px; height: 40px; background: #a855f7; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+              </div>
+              <div>
+                <h2 style="margin: 0; font-size: 1.3rem;">NFT Multi-Wallet Tracker</h2>
+                <p style="margin: 4px 0 0; color: var(--muted); font-size: 0.9rem;">Track whitelists & latest mints across multiple wallets with OpenSea API</p>
+              </div>
+            </div>
+            
+            <!-- Add Wallet Section -->
+            <div style="margin-bottom: 20px;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;">Add Wallet Address</label>
+              <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+                <input type="text" placeholder="0x742d35Cc6634C0532925a3b8D6aC6...9032" style="flex: 1; padding: 12px; border: 1px solid var(--border); border-radius: 8px;">
+                <button class="btn primary" style="padding: 12px 20px; white-space: nowrap;">+ Add Wallet</button>
+              </div>
+              
+              <!-- Tracking Options -->
+              <div style="background: rgba(168,85,247,0.05); border-radius: 6px; padding: 12px; border: 1px dashed rgba(168,85,247,0.2);">
+                <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.85rem;">Auto-Tracking Settings</label>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-size: 0.8rem;">
+                  <label style="display: flex; align-items: center; gap: 6px;">
+                    <input type="checkbox" checked style="margin: 0;">
+                    <span>Monitor New Mints</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px;">
+                    <input type="checkbox" checked style="margin: 0;">
+                    <span>Whitelist Status Changes</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px;">
+                    <input type="checkbox" style="margin: 0;">
+                    <span>Floor Price Alerts</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px;">
+                    <input type="checkbox" style="margin: 0;">
+                    <span>Upcoming Drops</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tracked Wallets Dashboard -->
+            <div style="background: var(--surface); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <h4 style="margin: 0; color: var(--accent);">Tracked Wallets (2) - OpenSea API Connected</h4>
+                <div style="display: flex; gap: 8px;">
+                  <span class="dense-badge" style="background: var(--success); color: white; border: none; font-size: 0.7rem;">🔔 Live</span>
+                  <span class="dense-badge" style="background: #a855f7; color: white; border: none; font-size: 0.7rem;">OpenSea ✓</span>
+                </div>
+              </div>
+              
+              <!-- Wallet 1 -->
+              <div style="background: rgba(255,255,255,0.8); border-radius: 6px; padding: 12px; margin-bottom: 12px; border-left: 4px solid var(--success);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; font-family: monospace;">0x742d...9032</span>
+                    <span class="dense-badge" style="background: rgba(34,197,94,0.1); color: var(--success); border-color: var(--success); font-size: 0.7rem;">Active Minter</span>
+                  </div>
+                  <button style="background: transparent; border: none; color: var(--muted); cursor: pointer; padding: 2px;">✕</button>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div style="background: rgba(34,197,94,0.1); border-radius: 4px; padding: 8px; margin-bottom: 8px;">
+                  <div style="font-size: 0.75rem; color: var(--success); font-weight: 600; margin-bottom: 4px;">🔥 NEW MINT DETECTED - 3 mins ago</div>
+                  <div style="font-size: 0.8rem; color: var(--fg);">
+                    <strong>Azuki Elementals #4721</strong> - Minted for 0.08 ETH ($132)
+                  </div>
+                  <div style="font-size: 0.7rem; color: var(--muted); margin-top: 2px;">
+                    Current Floor: 0.12 ETH (+50% instant profit)
+                  </div>
+                </div>
+
+                <!-- Whitelist Status Grid -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+                  <div style="background: rgba(34,197,94,0.1); padding: 6px; border-radius: 4px; text-align: center;">
+                    <div style="font-size: 0.7rem; color: var(--success); font-weight: 700;">✓ Pudgy Penguins</div>
+                  </div>
+                  <div style="background: rgba(34,197,94,0.1); padding: 6px; border-radius: 4px; text-align: center;">
+                    <div style="font-size: 0.7rem; color: var(--success); font-weight: 700;">✓ Moonbirds</div>
+                  </div>
+                  <div style="background: rgba(239,68,68,0.1); padding: 6px; border-radius: 4px; text-align: center;">
+                    <div style="font-size: 0.7rem; color: #ef4444; font-weight: 700;">✗ BAYC</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Wallet 2 -->
+              <div style="background: rgba(255,255,255,0.8); border-radius: 6px; padding: 12px; border-left: 4px solid #a855f7;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; font-family: monospace;">nftcollector.eth</span>
+                    <span class="dense-badge" style="background: rgba(168,85,247,0.1); color: #a855f7; border-color: #a855f7; font-size: 0.7rem;">Whale</span>
+                  </div>
+                  <button style="background: transparent; border: none; color: var(--muted); cursor: pointer; padding: 2px;">✕</button>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div style="background: rgba(245,158,11,0.1); border-radius: 4px; padding: 8px; margin-bottom: 8px;">
+                  <div style="font-size: 0.75rem; color: var(--warning); font-weight: 600; margin-bottom: 4px;">📋 WHITELIST STATUS UPDATE - 1 hour ago</div>
+                  <div style="font-size: 0.8rem; color: var(--fg);">
+                    <strong>DeGods V2</strong> - Added to presale whitelist
+                  </div>
+                  <div style="font-size: 0.7rem; color: var(--muted); margin-top: 2px;">
+                    Mint starts in 2 days - Price: 0.15 ETH
+                  </div>
+                </div>
+
+                <!-- Whitelist Status Grid -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+                  <div style="background: rgba(34,197,94,0.1); padding: 6px; border-radius: 4px; text-align: center;">
+                    <div style="font-size: 0.7rem; color: var(--success); font-weight: 700;">✓ Doodles</div>
+                  </div>
+                  <div style="background: rgba(245,158,11,0.1); padding: 6px; border-radius: 4px; text-align: center;">
+                    <div style="font-size: 0.7rem; color: var(--warning); font-weight: 700;">⏳ DeGods V2</div>
+                  </div>
+                  <div style="background: rgba(34,197,94,0.1); padding: 6px; border-radius: 4px; text-align: center;">
+                    <div style="font-size: 0.7rem; color: var(--success); font-weight: 700;">✓ Azuki</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Latest Mint Feed -->
+            <div style="background: rgba(168,85,247,0.05); border-radius: 6px; padding: 12px;">
+              <h4 style="margin: 0 0 12px; color: #a855f7; display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                Live Mint Feed (All Tracked Wallets)
+              </h4>
+              <div class="timeline-feed" style="max-height: 120px; overflow-y: auto;">
+                <div class="timeline-item">
+                  <div class="timeline-time">3m ago</div>
+                  <div class="timeline-content"><strong>0x742d...9032</strong> minted Azuki Elementals #4721 (0.08 ETH)</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">1h ago</div>
+                  <div class="timeline-content"><strong>nftcollector.eth</strong> added to DeGods V2 whitelist</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">2h ago</div>
+                  <div class="timeline-content"><strong>0x742d...9032</strong> minted Pudgy Penguins #8942 (0.12 ETH)</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">4h ago</div>
+                  <div class="timeline-content"><strong>nftcollector.eth</strong> minted Moonbirds Mythics #234 (0.25 ETH)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+        
+        <!-- Sidebar -->
+        <aside>
+          
+          <!-- Recent Activity -->
+          <div class="dense-card" style="margin-bottom: 24px;">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">📊 Recent Tool Activity</h3>
+            <div class="timeline-feed">
+              <div class="timeline-item">
+                <div class="timeline-time">2m ago</div>
+                <div class="timeline-content">@crypto_whale tracked Polymarket position (+$12K)</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">5m ago</div>
+                <div class="timeline-content">@nft_hunter checked Azuki whitelist status</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">8m ago</div>
+                <div class="timeline-content">@defi_maxi analyzed 0x742d...9032 portfolio</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">12m ago</div>
+                <div class="timeline-content">@gas_saver optimized transaction timing</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tool Stats -->
+          <div class="dense-card" style="margin-bottom: 24px;">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">📈 Tool Performance</h3>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">Accuracy Rate</span>
+                <span style="font-weight: 700; color: var(--success);">94.7%</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">Total Queries Today</span>
+                <span style="font-weight: 700;">8,423</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">Avg Response Time</span>
+                <span style="font-weight: 700;">1.2s</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">Success Rate</span>
+                <span style="font-weight: 700; color: var(--success);">98.9%</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">User Satisfaction</span>
+                <span style="font-weight: 700; color: var(--accent);">4.8/5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="dense-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">⚡ Quick Actions</h3>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <button class="btn primary" style="width: 100%; padding: 8px; font-size: 0.8rem;">Request New Tool</button>
+              <button class="btn secondary" style="width: 100%; padding: 8px; font-size: 0.8rem;">API Access</button>
+              <button class="btn secondary" style="width: 100%; padding: 8px; font-size: 0.8rem;">Tool Feedback</button>
+              <button class="btn secondary" style="width: 100%; padding: 8px; font-size: 0.8rem;">Export Data</button>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>
+          <script>
+            // JavaScript functions for wallet details functionality
+            function showWalletDetails(wallet) {
+              document.getElementById('wallet-details').style.display = 'block';
+              document.getElementById('wallet-address').textContent = wallet;
+              // Simulate loading different trade data based on wallet
+              loadWalletTrades(wallet);
+            }
+
+            function closeWalletDetails() {
+              document.getElementById('wallet-details').style.display = 'none';
+            }
+
+            function loadWalletTrades(wallet) {
+              // Sample data - in real app this would be an API call
+              const tradesTable = document.getElementById('trades-table-body');
+              if (tradesTable) {
+                // Different data for different wallets
+                if (wallet === 'polywhale.eth') {
+                  tradesTable.innerHTML = `
+                    <tr style="border-bottom: 1px solid var(--border-subtle);">
+                      <td style="padding: 10px; font-size: 0.85rem; font-weight: 600;">Fed Rate Cut Dec 2024</td>
+                      <td style="padding: 10px; text-align: center;"><span class="dense-badge" style="background: rgba(239,68,68,0.1); color: #ef4444; border-color: #ef4444;">No</span></td>
+                      <td style="padding: 10px; text-align: center; font-weight: 700;">$8,900</td>
+                      <td style="padding: 10px; text-align: center;">34¢</td>
+                      <td style="padding: 10px; text-align: center; font-weight: 600;">29¢</td>
+                      <td style="padding: 10px; text-align: center; color: var(--success); font-weight: 700;">+$445</td>
+                      <td style="padding: 10px; text-align: center; font-size: 0.8rem; color: var(--muted);">5m ago</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-subtle);">
+                      <td style="padding: 10px; font-size: 0.85rem; font-weight: 600;">Bitcoin $100K by EOY</td>
+                      <td style="padding: 10px; text-align: center;"><span class="dense-badge" style="background: rgba(34,197,94,0.1); color: var(--success); border-color: var(--success);">Yes</span></td>
+                      <td style="padding: 10px; text-align: center; font-weight: 700;">$15,600</td>
+                      <td style="padding: 10px; text-align: center;">45¢</td>
+                      <td style="padding: 10px; text-align: center; font-weight: 600;">62¢</td>
+                      <td style="padding: 10px; text-align: center; color: var(--success); font-weight: 700;">+$2,652</td>
+                      <td style="padding: 10px; text-align: center; font-size: 0.8rem; color: var(--muted);">2h ago</td>
+                    </tr>`;
+                }
+              }
+            }
+
+            function sortTrades(sortBy) {
+              // Update active button
+              document.querySelectorAll('.dense-badge').forEach(btn => {
+                if (btn.onclick && btn.onclick.toString().includes('sortTrades')) {
+                  btn.style.background = 'transparent';
+                  btn.style.color = 'var(--fg)';
+                }
+              });
+              event.target.style.background = 'var(--accent)';
+              event.target.style.color = 'white';
+              
+              // In real app, this would re-sort the table data
+              console.log('Sorting trades by:', sortBy);
+            }
+
+            function showAnalytics() {
+              document.getElementById('analytics-dashboard').style.display = 'block';
+            }
+
+            function closeAnalytics() {
+              document.getElementById('analytics-dashboard').style.display = 'none';
+            }
+          </script>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Voyage</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+  <div class="layout">
+      <!-- ===== TOP BAR ===== -->
+      <header class="topbar dense">
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <h2 style="margin-bottom: 0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--fg);">Voyage</h2>
+          <input type="text" placeholder="Search campaigns..." style="width: 240px;">
+        </div>
+        <div style="display: flex; gap: 4px; align-items: center;">
+          <nav class="nav-links">
+            <a href="dashboard.html" class="nav-link active">Dash</a>
+            <a href="campaigns.html" class="nav-link">Campaign</a>
+            <a href="tasks.html" class="nav-link">Tasks</a>
+            <a href="leaderboard.html" class="nav-link">Stats</a>
+            <a href="rewards.html" class="nav-link">Earn</a>
+            <a href="alpha.html" class="nav-link">Alpha</a>
+            <a href="tools.html" class="nav-link">Tools</a>
+            <a href="admin.html" class="nav-link">Admin</a>
+          </nav>
+          <div style="width: 1px; height: 24px; background: var(--border-subtle); margin: 0 12px;"></div>
+          <!-- Notifications -->
+          <button style="background: transparent; border: none; padding: 6px; border-radius: 8px; cursor: pointer; color: var(--muted); display: flex; align-items: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+          <!-- User -->
+          <a href="profile.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 5px 10px; background: rgba(255,255,255,0.5); border: 1px solid var(--border); border-radius: 10px;">
+            <span style="font-size: 0.82rem; font-weight: 600; color: var(--fg);">@ninja_user</span>
+            <div style="width: 26px; height: 26px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- ===== MAIN CONTENT ===== -->
+      <div class="dense-dashboard">
+
+        <!-- STATS ROW -->
+        <div class="dense-stats-row">
+          <div class="stat">
+            <div class="stat-value">08</div>
+            <div class="stat-label">Rank</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">3,120</div>
+            <div class="stat-label">Total Points</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">92%</div>
+            <div class="stat-label">Total Score</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Campaigns Joined</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">14</div>
+            <div class="stat-label">Campaigns Won</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Approval Rate</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">$450</div>
+            <div class="stat-label">Pending Rewards</div>
+          </div>
+        </div>
+
+        <!-- 3-COLUMN GRID -->
+        <div class="dashboard-grid-3">
+
+          <!-- ===== COL 1: ACTIVE CAMPAIGNS ===== -->
+          <div class="glass-panel" style="padding: 0; overflow: hidden;">
+            <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+              <span class="section-title" style="margin: 0; border: none; padding: 0;">Active Campaigns</span>
+              <a href="campaigns.html" style="font-size: 0.75rem; font-weight: 600; color: var(--muted);">View All →</a>
+            </div>
+            <div style="padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+
+              <!-- Campaign Card -->
+              <div class="dense-card" style="margin-bottom: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                  <div>
+                    <div style="font-size: 0.95rem; font-weight: 600; color: var(--fg); margin-bottom: 6px;">DeFi Protocol v2</div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                      <span class="dense-badge">Hybrid</span>
+                      <span class="dense-badge warning">38h Remaining</span>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent); white-space: nowrap; padding-left: 12px;">$5,000 USDT</span>
+                </div>
+                <p style="margin: 8px 0 12px;">Test liquidity migration path and document findings. High quality score required.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--border-subtle);">
+                  <span style="font-size: 0.72rem; color: var(--muted); font-weight: 500;">482 Participants · Open</span>
+                  <a href="campaign-detail.html" class="btn primary" style="padding: 5px 14px; font-size: 0.78rem; border-radius: 8px;">Join</a>
+                </div>
+              </div>
+
+              <div class="dense-card" style="margin-bottom: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                  <div>
+                    <div style="font-size: 0.95rem; font-weight: 600; color: var(--fg); margin-bottom: 6px;">Solana L3 Alpha</div>
+                    <div style="display: flex; gap: 6px;">
+                      <span class="dense-badge">Raffle</span>
+                      <span class="dense-badge">5d Remaining</span>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent); white-space: nowrap; padding-left: 12px;">$2,000 USDC</span>
+                </div>
+                <p style="margin: 8px 0 12px;">Bridge assets to the devnet and complete 5 swaps to qualify for the raffle.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--border-subtle);">
+                  <span style="font-size: 0.72rem; color: var(--muted); font-weight: 500;">1.2k Participants · Open</span>
+                  <a href="campaign-detail.html" class="btn primary" style="padding: 5px 14px; font-size: 0.78rem; border-radius: 8px;">Join</a>
+                </div>
+              </div>
+
+              <div class="dense-card" style="margin-bottom: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                  <div>
+                    <div style="font-size: 0.95rem; font-weight: 600; color: var(--fg); margin-bottom: 6px;">NFT Mint Bot Test</div>
+                    <div style="display: flex; gap: 6px;">
+                      <span class="dense-badge">Technical</span>
+                      <span class="dense-badge warning">12h Remaining</span>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent); white-space: nowrap; padding-left: 12px;">$1,200 Pool</span>
+                </div>
+                <p style="margin: 8px 0 12px;">Stress test the new NFT minting bot. Submit logs and latency reports.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--border-subtle);">
+                  <span style="font-size: 0.72rem; color: var(--muted); font-weight: 500;">150 Participants · Open</span>
+                  <a href="campaign-detail.html" class="btn primary" style="padding: 5px 14px; font-size: 0.78rem; border-radius: 8px;">Join</a>
+                </div>
+              </div>
+
+              <div class="dense-card" style="margin-bottom: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                  <div>
+                    <div style="font-size: 0.95rem; font-weight: 600; color: var(--fg); margin-bottom: 6px;">EVM Bridge Audit</div>
+                    <div style="display: flex; gap: 6px;">
+                      <span class="dense-badge">Security</span>
+                      <span class="dense-badge">14d Remaining</span>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent); white-space: nowrap; padding-left: 12px;">3,000 REP</span>
+                </div>
+                <p style="margin: 8px 0 12px;">Review the smart contracts for the new EVM bridge implementation.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--border-subtle);">
+                  <span style="font-size: 0.72rem; color: var(--muted); font-weight: 500;">42 Participants · Exclusive</span>
+                  <a href="campaign-detail.html" class="btn primary" style="padding: 5px 14px; font-size: 0.78rem; border-radius: 8px;">Join</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== COL 2: MY ACTIVITY ===== -->
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+
+            <!-- Timeline -->
+            <div class="glass-panel" style="padding: 0; overflow: hidden;">
+              <div style="padding: 14px 20px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                <span class="section-title" style="margin: 0; border: none; padding: 0;">My Activity</span>
+              </div>
+              <div style="padding: 4px 16px 8px;">
+                <div class="timeline-feed">
+                  <div class="timeline-item">
+                    <div class="timeline-time">10:42 AM</div>
+                    <div class="timeline-content">Proof <strong style="color: var(--accent);">ACCEPTED</strong> for "L2 Load Test". <span style="color: var(--accent); font-weight: 600;">+120 REP</span></div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-time">09:15 AM</div>
+                    <div class="timeline-content">Submitted proof for "DeFi Protocol v2" task "Liquidity Migration".</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-time">Yesterday</div>
+                    <div class="timeline-content">Badge Unlocked: <strong>Early Alpha</strong> 🏅</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-time">Yesterday</div>
+                    <div class="timeline-content">Reward distributed: <span style="color: var(--accent); font-weight: 600;">$50 USDC</span> (Wallet ending in 4x9A)</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-time">2 Days Ago</div>
+                    <div class="timeline-content">Proof <strong style="color: var(--accent);">ACCEPTED</strong> for "Solana L3 Alpha". <span style="color: var(--accent); font-weight: 600;">+50 REP</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Entry -->
+            <div class="glass-panel" style="padding: 0; overflow: hidden;">
+              <div style="padding: 14px 20px; border-bottom: 1px solid var(--border-subtle);">
+                <span class="section-title" style="margin: 0; border: none; padding: 0;">Recent Entry</span>
+              </div>
+              <table class="dense-table" style="margin: 0;">
+                <thead>
+                  <tr>
+                    <th>Campaign</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>DeFi Protocol v2</td>
+                    <td style="color: var(--muted);">Today</td>
+                    <td><span style="color: var(--warning); font-weight: 600;">Pending</span></td>
+                    <td style="color: var(--muted);">—</td>
+                  </tr>
+                  <tr>
+                    <td>L2 Load Test</td>
+                    <td style="color: var(--muted);">Today</td>
+                    <td><span style="color: var(--success); font-weight: 600;">Accepted</span></td>
+                    <td>98/100</td>
+                  </tr>
+                  <tr>
+                    <td>Solana L3 Alpha</td>
+                    <td style="color: var(--muted);">Oct 12</td>
+                    <td><span style="color: var(--success); font-weight: 600;">Accepted</span></td>
+                    <td>100/100</td>
+                  </tr>
+                  <tr>
+                    <td>NFT Mint Bot</td>
+                    <td style="color: var(--muted);">Oct 10</td>
+                    <td><span style="color: var(--success); font-weight: 600;">Accepted</span></td>
+                    <td>92/100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <!-- ===== COL 3: QUICK OVERVIEW ===== -->
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+
+            <!-- Critical Deadline -->
+            <div class="glass-panel" style="background: rgba(59,130,246,0.06); border-color: rgba(59,130,246,0.2);">
+              <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 8px;">Critical Deadline</div>
+              <div style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; line-height: 1; color: var(--fg); margin-bottom: 6px;">38h 14m</div>
+              <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;">DeFi Protocol v2 — Liquidity Migration Task</div>
+            </div>
+
+            <!-- Wins -->
+            <div class="glass-panel" style="padding: 0; overflow: hidden;">
+              <div style="padding: 14px 20px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                <span class="section-title" style="margin: 0; border: none; padding: 0;">Wins</span>
+              </div>
+              <table class="dense-table" style="margin: 0;">
+                <thead>
+                  <tr>
+                    <th>Campaign</th>
+                    <th>Date Won</th>
+                    <th>Prize</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: bold;">L2 Bridge Alpha</td>
+                    <td style="color: var(--muted);">Oct 12</td>
+                    <td style="color: var(--accent); font-weight: 600;">$1,200</td>
+                    <td><span style="color: var(--success); font-weight: 600;">Claimed</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold;">DeFi Protocol v1</td>
+                    <td style="color: var(--muted);">Sep 28</td>
+                    <td style="color: var(--accent); font-weight: 600;">$500</td>
+                    <td><span style="color: var(--success); font-weight: 600;">Claimed</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold;">NFT Marketplace Test</td>
+                    <td style="color: var(--muted);">Sep 15</td>
+                    <td style="color: var(--accent); font-weight: 600;">$300</td>
+                    <td><span style="color: var(--success); font-weight: 600;">Claimed</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold;">Solana L3 Raffle</td>
+                    <td style="color: var(--muted);">Aug 22</td>
+                    <td style="color: var(--accent); font-weight: 600;">$750</td>
+                    <td><span style="color: var(--success); font-weight: 600;">Claimed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="padding: 10px 20px; border-top: 1px solid var(--border-subtle);">
+                <a href="rewards.html" style="font-size: 0.75rem; font-weight: 600; color: var(--muted);">View All →</a>
+              </div>
+            </div>
+
+            <!-- Active Tasks -->
+            <div class="glass-panel" style="padding: 0; overflow: hidden;">
+              <div style="padding: 14px 20px; border-bottom: 1px solid var(--border-subtle);">
+                <span class="section-title" style="margin: 0; border: none; padding: 0;">Active Tasks</span>
+              </div>
+              <div style="padding: 8px 16px 12px;">
+                <div class="timeline-feed">
+                  <div class="timeline-item" style="align-items: center; justify-content: space-between;">
+                    <div>
+                      <div style="font-weight: 600; font-size: 0.85rem; color: var(--fg);">Liquidity Migration</div>
+                      <div style="font-size: 0.72rem; color: var(--muted);">DeFi Protocol v2</div>
+                    </div>
+                    <span class="dense-badge accent">In Progress</span>
+                  </div>
+                  <div class="timeline-item" style="align-items: center; justify-content: space-between;">
+                    <div>
+                      <div style="font-weight: 600; font-size: 0.85rem; color: var(--fg);">5 Swaps on Devnet</div>
+                      <div style="font-size: 0.72rem; color: var(--muted);">Solana L3 Alpha</div>
+                    </div>
+                    <span class="dense-badge">0/5 Done</span>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 10px 20px; border-top: 1px solid var(--border-subtle);">
+                <a href="tasks.html" style="font-size: 0.75rem; font-weight: 600; color: var(--muted);">View All →</a>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+</body>
+</html>

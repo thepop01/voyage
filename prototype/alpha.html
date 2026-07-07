@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Insights - Voyage</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+  <div class="layout">
+      <!-- ===== TOP BAR ===== -->
+      <header class="topbar dense">
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <h2 style="margin-bottom: 0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--fg);">Voyage</h2>
+          <input type="text" placeholder="Search insights..." style="width: 240px;">
+        </div>
+        <div style="display: flex; gap: 4px; align-items: center;">
+          <nav class="nav-links">
+            <a href="dashboard.html" class="nav-link">Dash</a>
+            <a href="campaigns.html" class="nav-link">Campaign</a>
+            <a href="tasks.html" class="nav-link">Tasks</a>
+            <a href="leaderboard.html" class="nav-link">Stats</a>
+            <a href="rewards.html" class="nav-link">Earn</a>
+            <a href="alpha.html" class="nav-link active">Alpha</a>
+            <a href="tools.html" class="nav-link">Tools</a>
+            <a href="admin.html" class="nav-link">Admin</a>
+          </nav>
+          <div style="width: 1px; height: 24px; background: var(--border-subtle); margin: 0 12px;"></div>
+          <!-- Notifications -->
+          <button style="background: transparent; border: none; padding: 6px; border-radius: 8px; cursor: pointer; color: var(--muted); display: flex; align-items: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+          <!-- User -->
+          <a href="profile.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 5px 10px; background: rgba(255,255,255,0.5); border: 1px solid var(--border); border-radius: 10px;">
+            <span style="font-size: 0.82rem; font-weight: 600; color: var(--fg);">@ninja_user</span>
+            <div style="width: 26px; height: 26px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+          </a>
+        </div>
+      </header>
+
+    <div class="page-content">
+      <div style="margin-bottom: 64px;">
+        <div class="badge accent" style="margin-bottom: 12px;">Alpha Intelligence</div>
+        <h1 style="margin-bottom: 8px;">AI & Market Alpha</h1>
+        <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">AI Tools, Agent Reviews & Market Intelligence</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div style="display: flex; gap: 8px; margin-bottom: 32px; padding: 4px; background: rgba(255,255,255,0.3); border-radius: 12px; width: fit-content;">
+        <button class="dense-badge accent" style="padding: 8px 16px; font-size: 0.8rem; background: var(--accent); color: white; border: none; cursor: pointer;">All Alpha</button>
+        <button class="dense-badge" style="padding: 8px 16px; font-size: 0.8rem; cursor: pointer; background: transparent;">AI Tools</button>
+        <button class="dense-badge" style="padding: 8px 16px; font-size: 0.8rem; cursor: pointer; background: transparent;">Agents</button>
+        <button class="dense-badge" style="padding: 8px 16px; font-size: 0.8rem; cursor: pointer; background: transparent;">Markets</button>
+        <button class="dense-badge" style="padding: 8px 16px; font-size: 0.8rem; cursor: pointer; background: transparent;">Guides</button>
+      </div>
+
+      <!-- 2-Column Layout -->
+      <div class="split" style="grid-template-columns: 2fr 1fr; gap: 32px;">
+        
+        <!-- Main Content -->
+        <main>
+          
+          <!-- Featured AI Guide -->
+          <div class="dense-card" style="margin-bottom: 32px; padding: 24px; background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(147,51,234,0.06)); border-color: rgba(59,130,246,0.2);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span class="dense-badge accent">Featured Guide</span>
+              <span style="font-size: 0.75rem; color: var(--muted); font-weight: 600;">UPDATED TODAY</span>
+            </div>
+            <h2 style="margin-bottom: 12px; font-size: 1.5rem;">Complete AI Agent Setup Guide 2026</h2>
+            <p style="margin-bottom: 16px; font-size: 1rem; line-height: 1.6;">Master the top AI agents: Claude, ChatGPT, Perplexity, and emerging crypto-native agents. Step-by-step setup, optimization tips, and use case comparisons for maximum alpha extraction.</p>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; gap: 8px;">
+                <span class="dense-badge">AI Setup</span>
+                <span class="dense-badge">Beginner</span>
+                <span class="dense-badge">15 min read</span>
+              </div>
+              <a href="#guide-section" style="font-size: 0.8rem; font-weight: 700; color: var(--accent);">Read Full Guide →</a>
+            </div>
+          </div>
+
+          <!-- AI Agent Comparison Grid -->
+          <div style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 2px solid var(--border); padding-bottom: 8px;">🤖 Best AI Agents Ranked</h2>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+              
+              <!-- Claude -->
+              <div class="dense-card" style="border-left: 4px solid #10b981;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background: #10b981; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">#1</div>
+                    <div>
+                      <h3 style="margin: 0; font-size: 1.1rem;">Claude Sonnet 3.5</h3>
+                      <p style="margin: 0; font-size: 0.8rem; color: var(--muted);">Best for Coding & Analysis</p>
+                    </div>
+                  </div>
+                  <span style="font-size: 1.2rem; font-weight: 700; color: #10b981;">9.4/10</span>
+                </div>
+                <div style="margin-bottom: 12px;">
+                  <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                    <span class="dense-badge" style="background: rgba(16,185,129,0.1); color: #10b981; border-color: #10b981; font-size: 0.7rem;">Excellent Reasoning</span>
+                    <span class="dense-badge" style="background: rgba(16,185,129,0.1); color: #10b981; border-color: #10b981; font-size: 0.7rem;">Code Expert</span>
+                  </div>
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Superior at complex analysis, coding, and multi-step reasoning. Best for research and technical tasks.</p>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted);">
+                  <strong>Price:</strong> $20/month Pro • <strong>Best for:</strong> Technical analysis, smart contract audits
+                </div>
+              </div>
+
+              <!-- ChatGPT -->
+              <div class="dense-card" style="border-left: 4px solid #3b82f6;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">#2</div>
+                    <div>
+                      <h3 style="margin: 0; font-size: 1.1rem;">ChatGPT-4o</h3>
+                      <p style="margin: 0; font-size: 0.8rem; color: var(--muted);">Best All-Rounder</p>
+                    </div>
+                  </div>
+                  <span style="font-size: 1.2rem; font-weight: 700; color: #3b82f6;">9.1/10</span>
+                </div>
+                <div style="margin-bottom: 12px;">
+                  <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                    <span class="dense-badge" style="background: rgba(59,130,246,0.1); color: #3b82f6; border-color: #3b82f6; font-size: 0.7rem;">Multimodal</span>
+                    <span class="dense-badge" style="background: rgba(59,130,246,0.1); color: #3b82f6; border-color: #3b82f6; font-size: 0.7rem;">Plugin Ecosystem</span>
+                  </div>
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Great general capabilities, image analysis, and massive plugin ecosystem for specialized tasks.</p>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted);">
+                  <strong>Price:</strong> $20/month Plus • <strong>Best for:</strong> General use, image analysis
+                </div>
+              </div>
+
+              <!-- Perplexity -->
+              <div class="dense-card" style="border-left: 4px solid #8b5cf6;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background: #8b5cf6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">#3</div>
+                    <div>
+                      <h3 style="margin: 0; font-size: 1.1rem;">Perplexity Pro</h3>
+                      <p style="margin: 0; font-size: 0.8rem; color: var(--muted);">Best for Research</p>
+                    </div>
+                  </div>
+                  <span style="font-size: 1.2rem; font-weight: 700; color: #8b5cf6;">8.9/10</span>
+                </div>
+                <div style="margin-bottom: 12px;">
+                  <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                    <span class="dense-badge" style="background: rgba(139,92,246,0.1); color: #8b5cf6; border-color: #8b5cf6; font-size: 0.7rem;">Real-time Data</span>
+                    <span class="dense-badge" style="background: rgba(139,92,246,0.1); color: #8b5cf6; border-color: #8b5cf6; font-size: 0.7rem;">Source Citations</span>
+                  </div>
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Excellent for research with real-time web access and proper source citations. Perfect for market analysis.</p>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted);">
+                  <strong>Price:</strong> $20/month Pro • <strong>Best for:</strong> Market research, fact-checking
+                </div>
+              </div>
+
+              <!-- Crypto Native Agent -->
+              <div class="dense-card" style="border-left: 4px solid #f59e0b;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background: #f59e0b; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">#4</div>
+                    <div>
+                      <h3 style="margin: 0; font-size: 1.1rem;">Virtuals Protocol</h3>
+                      <p style="margin: 0; font-size: 0.8rem; color: var(--muted);">Best Crypto-Native Agent</p>
+                    </div>
+                  </div>
+                  <span style="font-size: 1.2rem; font-weight: 700; color: #f59e0b;">8.7/10</span>
+                </div>
+                <div style="margin-bottom: 12px;">
+                  <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                    <span class="dense-badge" style="background: rgba(245,158,11,0.1); color: #f59e0b; border-color: #f59e0b; font-size: 0.7rem;">On-chain Actions</span>
+                    <span class="dense-badge" style="background: rgba(245,158,11,0.1); color: #f59e0b; border-color: #f59e0b; font-size: 0.7rem;">DeFi Native</span>
+                  </div>
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin: 0;">Specialized for DeFi, can execute transactions, analyze protocols, and provide yield farming strategies.</p>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted);">
+                  <strong>Price:</strong> Token-based • <strong>Best for:</strong> DeFi strategies, on-chain analysis
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- AI Setup Guide Section -->
+          <div id="guide-section" style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 2px solid var(--border); padding-bottom: 8px;">📚 Complete AI Setup Guide</h2>
+            
+            <div class="dense-card" style="margin-bottom: 20px;">
+              <h3 style="margin-bottom: 16px; color: var(--accent);">Step 1: Choose Your Primary Agent</h3>
+              <div style="background: rgba(59,130,246,0.05); padding: 16px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid var(--accent);">
+                <p style="margin: 0; font-weight: 600; margin-bottom: 8px;">💡 Pro Tip: Start with 2-3 agents for different use cases</p>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+                  <li><strong>Claude:</strong> Technical analysis, coding, smart contract reviews</li>
+                  <li><strong>Perplexity:</strong> Real-time market research and news</li>
+                  <li><strong>ChatGPT:</strong> General tasks, brainstorming, content creation</li>
+                </ul>
+              </div>
+              
+              <h4 style="margin-bottom: 12px;">Quick Setup Links:</h4>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="#" class="btn primary" style="padding: 6px 12px; font-size: 0.8rem; text-decoration: none;">Claude Pro →</a>
+                <a href="#" class="btn secondary" style="padding: 6px 12px; font-size: 0.8rem; text-decoration: none;">ChatGPT Plus →</a>
+                <a href="#" class="btn secondary" style="padding: 6px 12px; font-size: 0.8rem; text-decoration: none;">Perplexity Pro →</a>
+              </div>
+            </div>
+
+            <div class="dense-card" style="margin-bottom: 20px;">
+              <h3 style="margin-bottom: 16px; color: var(--accent);">Step 2: Optimize Your Prompts</h3>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                  <h4 style="margin-bottom: 8px; font-size: 0.9rem;">❌ Bad Prompt</h4>
+                  <div style="background: rgba(239,68,68,0.05); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 0.8rem; border-left: 3px solid #ef4444;">
+                    "What do you think about this DeFi protocol?"
+                  </div>
+                </div>
+                <div>
+                  <h4 style="margin-bottom: 8px; font-size: 0.9rem;">✅ Good Prompt</h4>
+                  <div style="background: rgba(34,197,94,0.05); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 0.8rem; border-left: 3px solid #22c55e;">
+                    "Analyze Aave V3's risk parameters, TVL trends, and governance proposals from the last 30 days. Focus on liquidation risks and yield sustainability."
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dense-card">
+              <h3 style="margin-bottom: 16px; color: var(--accent);">Step 3: Advanced Techniques</h3>
+              <div class="timeline-feed">
+                <div class="timeline-item">
+                  <div style="font-weight: 600; margin-bottom: 4px;">Chain-of-Thought Prompting</div>
+                  <div>Ask the AI to "think step by step" for complex analysis tasks</div>
+                </div>
+                <div class="timeline-item">
+                  <div style="font-weight: 600; margin-bottom: 4px;">Role-Based Prompts</div>
+                  <div>"Act as a DeFi researcher analyzing..." gets more specialized responses</div>
+                </div>
+                <div class="timeline-item">
+                  <div style="font-weight: 600; margin-bottom: 4px;">Context Loading</div>
+                  <div>Provide relevant docs, charts, or data before asking questions</div>
+                </div>
+                <div class="timeline-item">
+                  <div style="font-weight: 600; margin-bottom: 4px;">Multi-Agent Workflows</div>
+                  <div>Use different agents for research → analysis → execution</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Market Intelligence -->
+          <div style="margin-bottom: 40px;">
+            <h2 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 2px solid var(--border); padding-bottom: 8px;">📊 Latest Market Alpha</h2>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+              
+              <!-- Polymarket Insight -->
+              <div class="dense-card">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                  <span class="dense-badge accent">Featured</span>
+                  <span style="font-size: 0.7rem; color: var(--muted); font-weight: 600;">2 HOURS AGO</span>
+                </div>
+                <h3 style="margin-bottom: 8px; font-size: 1.1rem;">Polymarket Volume Surges 340%</h3>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; line-height: 1.5;">Prediction markets seeing unprecedented activity with $2.4B volume. AI analysis shows institutional flow patterns.</p>
+                <a href="#" style="font-size: 0.75rem; font-weight: 700; color: var(--accent);">AI Analysis →</a>
+              </div>
+
+              <!-- NFT Alpha -->
+              <div class="dense-card">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                  <span class="dense-badge" style="background: rgba(168,85,247,0.1); color: #a855f7; border-color: #a855f7;">NFT Alpha</span>
+                  <span style="font-size: 0.7rem; color: var(--muted); font-weight: 600;">4 HOURS AGO</span>
+                </div>
+                <h3 style="margin-bottom: 8px; font-size: 1.1rem;">AI-Powered Floor Price Predictions</h3>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; line-height: 1.5;">New ML models predict Azuki +23% and Pudgy Penguins +15% over next 7 days based on social sentiment.</p>
+                <a href="#" style="font-size: 0.75rem; font-weight: 700; color: var(--accent);">View Models →</a>
+              </div>
+
+              <!-- DeFi Intelligence -->
+              <div class="dense-card">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                  <span class="dense-badge" style="background: rgba(34,197,94,0.1); color: #22c55e; border-color: #22c55e;">DeFi</span>
+                  <span style="font-size: 0.7rem; color: var(--muted); font-weight: 600;">6 HOURS AGO</span>
+                </div>
+                <h3 style="margin-bottom: 8px; font-size: 1.1rem;">Yield Farming AI Optimizer</h3>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; line-height: 1.5;">New AI tool automatically rebalances across 50+ protocols. Average 18.3% APY with automated risk management.</p>
+                <a href="#" style="font-size: 0.75rem; font-weight: 700; color: var(--accent);">Try Optimizer →</a>
+              </div>
+
+              <!-- Emerging Tech -->
+              <div class="dense-card">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                  <span class="dense-badge" style="background: rgba(239,68,68,0.1); color: #ef4444; border-color: #ef4444;">AI Agents</span>
+                  <span style="font-size: 0.7rem; color: var(--muted); font-weight: 600;">1 DAY AGO</span>
+                </div>
+                <h3 style="margin-bottom: 8px; font-size: 1.1rem;">Autonomous Trading Agents Launch</h3>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; line-height: 1.5;">Virtuals Protocol releases on-chain agents that can execute complex trading strategies. Beta users report 34% monthly returns.</p>
+                <a href="#" style="font-size: 0.75rem; font-weight: 700; color: var(--accent);">Join Beta →</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Trending Topics -->
+          <div class="dense-card" style="margin-bottom: 32px;">
+            <h3 style="margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">Trending This Week</h3>
+            <div style="display: flex; flex-wrap: gap: 8px; margin-bottom: 20px;">
+              <span class="dense-badge accent">Solana Memecoins</span>
+              <span class="dense-badge">DePIN Tokens</span>
+              <span class="dense-badge">RWA Protocols</span>
+              <span class="dense-badge">AI Agents</span>
+              <span class="dense-badge">SocialFi</span>
+              <span class="dense-badge">Layer 3s</span>
+            </div>
+            <div class="timeline-feed">
+              <div class="timeline-item">
+                <div class="timeline-time">Now</div>
+                <div class="timeline-content"><strong>WIF</strong> breaks $4.20, up 67% on Binance listing rumors</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">2h</div>
+                <div class="timeline-content"><strong>Helium (HNT)</strong> surges 23% on new 5G partnerships</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">4h</div>
+                <div class="timeline-content"><strong>Ondo Finance</strong> launches institutional RWA fund</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">6h</div>
+                <div class="timeline-content"><strong>Friend.tech</strong> V2 beta launches with improved tokenomics</div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+          
+          <!-- AI Tools Leaderboard -->
+          <div class="dense-card" style="margin-bottom: 24px;">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">🤖 Top AI Tools This Week</h3>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: white;">1</div>
+                  <span style="font-weight: 600;">Claude Sonnet 3.5</span>
+                </div>
+                <span style="font-size: 0.8rem; color: var(--success); font-weight: 600;">9.4/10</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 24px; height: 24px; background: var(--muted); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: white;">2</div>
+                  <span style="font-weight: 600;">ChatGPT-4o</span>
+                </div>
+                <span style="font-size: 0.8rem; color: var(--success); font-weight: 600;">9.1/10</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 24px; height: 24px; background: var(--muted); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: white;">3</div>
+                  <span style="font-weight: 600;">Perplexity Pro</span>
+                </div>
+                <span style="font-size: 0.8rem; color: var(--success); font-weight: 600;">8.9/10</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 24px; height: 24px; background: var(--muted); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: white;">4</div>
+                  <span style="font-weight: 600;">Virtuals Protocol</span>
+                </div>
+                <span style="font-size: 0.8rem; color: var(--success); font-weight: 600;">8.7/10</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Market Pulse -->
+          <div class="dense-card" style="margin-bottom: 24px;">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">🧠 AI Market Pulse</h3>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">AI Agent Tokens</span>
+                <span style="font-weight: 700; color: var(--success);">+127%</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">Claude API Usage</span>
+                <span style="font-weight: 700; color: var(--success);">+89%</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">On-chain AI Actions</span>
+                <span style="font-weight: 700;">24.7K/day</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">Autonomous Trades</span>
+                <span style="font-weight: 700;">$18.4M</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem;">AI Model Updates</span>
+                <span style="font-weight: 700; color: var(--accent);">12 this week</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Quick Actions -->
+          <div class="dense-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px;">🚀 AI Quick Actions</h3>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <button class="btn primary" style="width: 100%; padding: 8px; font-size: 0.8rem;">Try Claude Pro Free</button>
+              <button class="btn secondary" style="width: 100%; padding: 8px; font-size: 0.8rem;">Join AI Alpha Group</button>
+              <button class="btn secondary" style="width: 100%; padding: 8px; font-size: 0.8rem;">Download Prompt Library</button>
+              <button class="btn secondary" style="width: 100%; padding: 8px; font-size: 0.8rem;">Setup Trading Bot</button>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>

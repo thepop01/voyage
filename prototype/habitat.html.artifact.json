@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Voyage — The Reputation Layer",
+  "entry": "Voyage.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-03T14:44:32.995Z",
+  "updatedAt": "2026-06-03T14:44:33.024Z",
+  "metadata": {
+    "identifier": "Voyage",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}

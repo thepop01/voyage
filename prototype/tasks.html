@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tasks - Voyage</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+  <div class="layout">
+      <!-- ===== TOP BAR ===== -->
+      <header class="topbar dense">
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <h2 style="margin-bottom: 0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--fg);">Voyage</h2>
+          <input type="text" placeholder="Search campaigns..." style="width: 240px;">
+        </div>
+        <div style="display: flex; gap: 4px; align-items: center;">
+          <nav class="nav-links">
+            <a href="dashboard.html" class="nav-link">Dash</a>
+            <a href="campaigns.html" class="nav-link">Explore</a>
+            <a href="tasks.html" class="nav-link active">Tasks</a>
+            <a href="leaderboard.html" class="nav-link">Stats</a>
+            <a href="rewards.html" class="nav-link">Raffle</a>
+            <a href="admin.html" class="nav-link">Admin</a>
+          </nav>
+          <div style="width: 1px; height: 24px; background: var(--border-subtle); margin: 0 12px;"></div>
+          <!-- Notifications -->
+          <button style="background: transparent; border: none; padding: 6px; border-radius: 8px; cursor: pointer; color: var(--muted); display: flex; align-items: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+          <!-- User -->
+          <a href="profile.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 5px 10px; background: rgba(255,255,255,0.5); border: 1px solid var(--border); border-radius: 10px;">
+            <span style="font-size: 0.82rem; font-weight: 600; color: var(--fg);">@ninja_user</span>
+            <div style="width: 26px; height: 26px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+          </a>
+        </div>
+      </header>
+
+    
+
+    <div class="page-content">
+      <div style="margin-bottom: 64px;">
+        <div class="badge accent" style="margin-bottom: 12px;">Daily Grind</div>
+        <h1 style="margin-bottom: 8px;">Tasks</h1>
+        <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Complete repetitive actions to build steady reputation</p>
+      </div>
+
+      <div class="split">
+        <div>
+          <h3 style="margin-bottom: 32px; border-bottom: 4px solid var(--fg); padding-bottom: 8px;">Daily Retention</h3>
+          <div class="grid" style="grid-template-columns: 1fr; gap: 16px; margin-top: 0;">
+            <div class="card" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 24px;">
+              <div>
+                <h4 style="margin-bottom: 4px;">Daily Login</h4>
+                <p style="font-size: 0.8rem; color: var(--muted);">Check in to maintain your streak.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <span style="color: var(--accent); font-weight: bold;">+10 REP</span>
+                <button class="badge accent">Claimed</button>
+              </div>
+            </div>
+            <div class="card" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 24px;">
+              <div>
+                <h4 style="margin-bottom: 4px;">Visit 3 Campaigns</h4>
+                <p style="font-size: 0.8rem; color: var(--muted);">Explore the marketplace for 1 minute.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <span style="color: var(--accent); font-weight: bold;">+25 REP</span>
+                <button class="btn primary" style="padding: 4px 16px;">Go →</button>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 64px; margin-bottom: 32px; border-bottom: 4px solid var(--fg); padding-bottom: 8px;">Social Growth</h3>
+          <div class="grid" style="grid-template-columns: 1fr; gap: 16px; margin-top: 0;">
+            <div class="card" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 24px;">
+              <div>
+                <h4 style="margin-bottom: 4px;">Follow @VoyageProtocol</h4>
+                <p style="font-size: 0.8rem; color: var(--muted);">Stay updated with the latest news.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <span style="color: var(--accent); font-weight: bold;">+100 REP</span>
+                <button class="btn primary" style="padding: 4px 16px;">Follow</button>
+              </div>
+            </div>
+            <div class="card" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 24px;">
+              <div>
+                <h4 style="margin-bottom: 4px;">Join Official Discord</h4>
+                <p style="font-size: 0.8rem; color: var(--muted);">Engage with the community.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <span style="color: var(--accent); font-weight: bold;">+150 REP</span>
+                <button class="btn primary" style="padding: 4px 16px;">Join</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card" style="border-color: var(--accent); background: rgba(217, 119, 87, 0.05);">
+            <h3 style="margin-bottom: 16px;">Streak Bonus</h3>
+            <div style="font-size: 3rem; font-family: var(--font-display); color: var(--accent);">05 Days</div>
+            <p style="font-size: 0.8rem; margin-top: 16px; color: var(--muted);">Reach 7 days for a <span style="color: var(--fg); font-weight: bold;">Reputation Multiplier x1.2</span></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>
