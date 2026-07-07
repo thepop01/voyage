@@ -5,8 +5,8 @@ import Link from "next/link"
 /* ─── Icons ────────────────────────────────────────────── */
 
 const VerifiedIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#10b981"/>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#fff"/>
   </svg>
 )
 
@@ -28,10 +28,10 @@ const WinIcon = () => (
 )
 
 const DiamondIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="#3b82f6" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2L2 9l10 13 10-13-10-7z" fill="#3b82f6"/>
-    <path d="M12 2L2 9l10 13V2z" fill="#60a5fa"/>
-    <path d="M12 2L7 9l5 13V2z" fill="#93c5fd"/>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L2 9l10 13 10-13-10-7z" fill="#fff"/>
+    <path d="M12 2L2 9l10 13V2z" fill="#fff"/>
+    <path d="M12 2L7 9l5 13V2z" fill="#fff"/>
   </svg>
 )
 
@@ -45,24 +45,24 @@ const TrophyIcon = ({ color }: { color: string }) => (
 
 const announcements = [
   {
-    id: 1, type: "WINNER", typeEmoji: "🏆", typeColor: "#f59e0b", typeBg: "rgba(245, 158, 11, 0.12)", typeBorder: "rgba(245, 158, 11, 0.3)",
-    user: "@alpha_dev", name: "Alex Devlin", initials: "AD", avatarColor: "#7c3aed",
+    id: 1, type: "WINNER", typeEmoji: "", typecolor: "#fff", typeBg: "rgba(245, 158, 11, 0.12)", typeBorder: "rgba(245, 158, 11, 0.3)",
+    user: "@alpha_dev", name: "Alex Devlin", initials: "AD", avatarColor: "#fff",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
     message: "won the DeFi Protocol v2 campaign", prize: "$500 USDC",
     date: "June 14, 2026", rep: "15.8k", wins: "47",
     desc: "A visionary developer pushing the boundaries of decentralized finance protocols and smart contracts."
   },
   {
-    id: 2, type: "GOAT", typeEmoji: "🌟", typeColor: "#c4b5fd", typeBg: "rgba(124, 58, 237, 0.15)", typeBorder: "rgba(139, 92, 246, 0.35)",
-    user: "@crypto_king", name: "Kyrie Nakamura", initials: "KN", avatarColor: "#8b5cf6",
+    id: 2, type: "GOAT", typeEmoji: "🌟", typecolor: "#fff", typeBg: "rgba(124, 58, 237, 0.15)", typeBorder: "rgba(139, 92, 246, 0.35)",
+    user: "@crypto_king", name: "Kyrie Nakamura", initials: "KN", avatarColor: "#fff",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
     message: "became the all-time highest REP holder with", prize: "15,800 REP",
     date: "June 12, 2026", rep: "15.8k", wins: "32",
     desc: "An elite strategist dominating the leaderboards through high-quality campaign submissions."
   },
   {
-    id: 3, type: "GIFT", typeEmoji: "🎁", typeColor: "#f472b6", typeBg: "rgba(244, 114, 182, 0.12)", typeBorder: "rgba(244, 114, 182, 0.3)",
-    user: "@nft_whale", name: "Nadia Fontaine", initials: "NF", avatarColor: "#be185d",
+    id: 3, type: "GIFT", typeEmoji: "", typeColor: "#fff", typeBg: "rgba(244, 114, 182, 0.12)", typeBorder: "rgba(244, 114, 182, 0.3)",
+    user: "@nft_whale", name: "Nadia Fontaine", initials: "NF", avatarColor: "#fff",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
     message: "received a legendary Solana Alpha NFT whitelist as a surprise", prize: "Whitelist Spot",
     date: "June 10, 2026", rep: "11.2k", wins: "18",
@@ -145,7 +145,7 @@ export default function StatsPage() {
       {/* ── Page Header ── */}
       <div style={{ marginBottom: 48 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-          <span style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--accent)", padding: "4px 12px", borderRadius: 100, background: "var(--accent-dim)", border: "1px solid rgba(124,58,237,0.3)" }}>Live Stats</span>
+          <span style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", color: "#fff", padding: "4px 12px", borderRadius: 100, background: "var(--accent-dim)", border: "1px solid rgba(255,255,255,0.15)" }}>Live Stats</span>
         </div>
         <h1 style={{ fontSize: "2.8rem", marginBottom: 10, letterSpacing: "-0.02em" }}>
           Stats & Hall of Fame
@@ -164,7 +164,7 @@ export default function StatsPage() {
           {/* Announcement Card & Details */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#10b981", boxShadow: "0 0 8px #10b981", animation: "pulse 2s infinite" }} />
+              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#fff", boxShadow: "0 0 8px #10b981", animation: "pulse 2s infinite" }} />
               <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--fg)" }}>
                 Latest Highlights
               </span>
@@ -320,7 +320,7 @@ export default function StatsPage() {
                   const isSecond = i === 0;
                   const height = isFirst ? 280 : isSecond ? 230 : 200;
                   const width = isFirst ? 260 : 230;
-                  const trophyColor = isFirst ? "#fcd34d" : isSecond ? "#d1d5db" : "#b45309";
+                  const trophyColor = isFirst ? "#fff" : isSecond ? "#fff" : "#fff";
                   
                   return (
                     <div key={row.user} style={{ display: "flex", flexDirection: "column", alignItems: "center", width }}>
@@ -429,10 +429,10 @@ export default function StatsPage() {
           {/* Your Rank Callout */}
           <div className="glass-panel" style={{ padding: 24, background: "linear-gradient(180deg, rgba(30,41,59,0.7) 0%, rgba(15,23,42,0.7) 100%)", borderTop: "2px solid var(--accent)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 24 }}>
-              <Avatar initials="👤" color="#7c3aed" size={56} />
+              <Avatar initials="" color="#fff" size={56} />
               <div>
                 <h3 style={{ margin: "0 0 4px 0", fontSize: "1.1rem" }}>Your Rank</h3>
-                <div style={{ color: "var(--accent)", fontWeight: 700, fontSize: "1.3rem" }}>Top 8%</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.3rem" }}>Top 8%</div>
               </div>
             </div>
 

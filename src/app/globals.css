@@ -13,11 +13,11 @@
   --muted:          #5a6382;
   --border:         rgba(255, 255, 255, 0.08);
   --border-subtle:  rgba(255, 255, 255, 0.04);
-  --accent:         #7c3aed;
-  --accent-dim:     rgba(124, 58, 237, 0.18);
-  --success:        #a78bfa;
-  --warning:        #a78bfa;
-  --danger:         #ef4444;
+  --accent:         #ffffff;
+  --accent-dim:     rgba(255, 255, 255, 0.12);
+  --success:        #ffffff;
+  --warning:        #ffffff;
+  --danger:         #ffffff;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body:    'Inter', sans-serif;
@@ -86,15 +86,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Glass button */
 .glass-button {
-  background: rgba(124, 58, 237, 0.15);
-  color: var(--fg);
-  border: 1px solid rgba(124, 58, 237, 0.35);
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 .glass-button:hover {
-  background: rgba(124, 58, 237, 0.28);
-  border-color: rgba(124, 58, 237, 0.55);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
 /* Glass icon */
@@ -102,15 +102,15 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--fg);
-  border: 1px solid rgba(124, 58, 237, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.2s ease;
   cursor: pointer;
   text-decoration: none;
 }
 .glass-icon:hover {
-  background: rgba(124, 58, 237, 0.22);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
 }
 
@@ -148,15 +148,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dense-badge.accent {
-  background: var(--accent-dim);
-  border-color: rgba(124,58,237,0.3);
-  color: var(--accent);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  color: #fff;
 }
 
 .dense-badge.warning {
-  background: rgba(167,139,250,0.1);
-  border-color: rgba(167,139,250,0.3);
-  color: var(--warning);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  color: #fff;
 }
 
 /* Section title */
@@ -234,7 +234,7 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-item:last-child { border-bottom: none; }
 .timeline-time {
   font-size: 0.68rem;
-  color: var(--accent);
+  color: #fff;
   min-width: 65px;
   font-weight: 600;
   text-transform: uppercase;
@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-8px) scale(1.15);
 }
 .dock-item.active { 
-  color: var(--accent);
+  color: #fff;
 }
 .dock-icon-wrapper {
   position: relative;

@@ -7,14 +7,14 @@ const announcements = [
   {
     id: 1,
     type: "WINNER",
-    typeEmoji: "🏆",
-    typeColor: "#f59e0b",
+    typeEmoji: "",
+    typecolor: "#fff",
     typeBg: "rgba(245, 158, 11, 0.12)",
     typeBorder: "rgba(245, 158, 11, 0.3)",
     user: "@alpha_dev",
     name: "Alex Devlin",
     initials: "AD",
-    avatarColor: "#7c3aed",
+    avatarColor: "#fff",
     message: "won the DeFi Protocol v2 campaign",
     prize: "$500 USDC",
     date: "June 14, 2026",
@@ -23,13 +23,13 @@ const announcements = [
     id: 2,
     type: "GOAT",
     typeEmoji: "🌟",
-    typeColor: "#c4b5fd",
+    typecolor: "#fff",
     typeBg: "rgba(124, 58, 237, 0.15)",
     typeBorder: "rgba(139, 92, 246, 0.35)",
     user: "@crypto_king",
     name: "Kyrie Nakamura",
     initials: "KN",
-    avatarColor: "#8b5cf6",
+    avatarColor: "#fff",
     message: "became the all-time highest REP holder with",
     prize: "15,800 REP",
     date: "June 12, 2026",
@@ -37,14 +37,14 @@ const announcements = [
   {
     id: 3,
     type: "GIFT",
-    typeEmoji: "🎁",
-    typeColor: "#f472b6",
+    typeEmoji: "",
+    typeColor: "#fff",
     typeBg: "rgba(244, 114, 182, 0.12)",
     typeBorder: "rgba(244, 114, 182, 0.3)",
     user: "@nft_whale",
     name: "Nadia Fontaine",
     initials: "NF",
-    avatarColor: "#be185d",
+    avatarColor: "#fff",
     message: "received a legendary Solana Alpha NFT whitelist as a surprise",
     prize: "Whitelist Spot",
     date: "June 10, 2026",
@@ -52,8 +52,8 @@ const announcements = [
   {
     id: 4,
     type: "STREAK",
-    typeEmoji: "🔥",
-    typeColor: "#fb923c",
+    typeEmoji: "",
+    typeColor: "#fff",
     typeBg: "rgba(251, 146, 60, 0.12)",
     typeBorder: "rgba(251, 146, 60, 0.3)",
     user: "@chain_runner",
@@ -67,8 +67,8 @@ const announcements = [
   {
     id: 5,
     type: "WINNER",
-    typeEmoji: "🏆",
-    typeColor: "#f59e0b",
+    typeEmoji: "",
+    typecolor: "#fff",
     typeBg: "rgba(245, 158, 11, 0.12)",
     typeBorder: "rgba(245, 158, 11, 0.3)",
     user: "@dao_maker",
@@ -82,14 +82,14 @@ const announcements = [
 ]
 
 const leaderboardData = [
-  { rank: 1, user: "@alpha_dev",    name: "Alex Devlin",     initials: "AD", color: "#7c3aed", rep: 15800, quality: "99%", wins: 47 },
-  { rank: 2, user: "@crypto_king",  name: "Kyrie Nakamura",  initials: "KN", color: "#8b5cf6", rep: 12450, quality: "97%", wins: 32 },
+  { rank: 1, user: "@alpha_dev",    name: "Alex Devlin",     initials: "AD", color: "#fff", rep: 15800, quality: "99%", wins: 47 },
+  { rank: 2, user: "@crypto_king",  name: "Kyrie Nakamura",  initials: "KN", color: "#fff", rep: 12450, quality: "97%", wins: 32 },
   { rank: 3, user: "@web3_warrior", name: "Wei Okafor",      initials: "WO", color: "#6d28d9", rep: 10120, quality: "96%", wins: 28 },
   { rank: 4, user: "@chain_runner", name: "Chen Ruiz",       initials: "CR", color: "#c2410c", rep: 9850,  quality: "98%", wins: 12 },
   { rank: 5, user: "@dao_maker",    name: "Dmitri Aoki",     initials: "DA", color: "#1d4ed8", rep: 9200,  quality: "95%", wins: 10 },
-  { rank: 6, user: "@pixel_punk",   name: "Priya Patel",     initials: "PP", color: "#be185d", rep: 8700,  quality: "91%", wins: 9  },
+  { rank: 6, user: "@pixel_punk",   name: "Priya Patel",     initials: "PP", color: "#fff", rep: 8700,  quality: "91%", wins: 9  },
   { rank: 7, user: "@defi_ghost",   name: "Diego Fischer",   initials: "DF", color: "#065f46", rep: 6540,  quality: "89%", wins: 7  },
-  { rank: 8, user: "@ninja_user",   name: "You",             initials: "👤", color: "#7c3aed", rep: 3120,  quality: "92%", wins: 14, isYou: true },
+  { rank: 8, user: "@ninja_user",   name: "You",             initials: "", color: "#fff", rep: 3120,  quality: "92%", wins: 14, isYou: true },
 ]
 
 /* ─── Sub-components ────────────────────────────────────── */
@@ -141,9 +141,9 @@ export default function StatsPage() {
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
           <span style={{
             fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.15em",
-            textTransform: "uppercase", color: "var(--accent)",
+            textTransform: "uppercase", color: "#fff",
             padding: "4px 12px", borderRadius: 100,
-            background: "var(--accent-dim)", border: "1px solid rgba(124,58,237,0.3)"
+            background: "var(--accent-dim)", border: "1px solid rgba(255,255,255,0.15)"
           }}>Live Stats</span>
         </div>
         <h1 style={{ fontSize: "2.8rem", marginBottom: 10, letterSpacing: "-0.02em" }}>
@@ -157,7 +157,7 @@ export default function StatsPage() {
       {/* ── Live Announcement Carousel ── */}
       <div style={{ marginBottom: 64 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-          <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#10b981", boxShadow: "0 0 8px #10b981", animation: "pulse 2s infinite" }} />
+          <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#fff", boxShadow: "0 0 8px #10b981", animation: "pulse 2s infinite" }} />
           <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--fg)" }}>
             Live Announcements
           </span>
@@ -307,7 +307,7 @@ export default function StatsPage() {
       <div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 24 }}>
           <div>
-            <h2 style={{ fontSize: "1.5rem", margin: "0 0 4px 0" }}>📊 Rankings</h2>
+            <h2 style={{ fontSize: "1.5rem", margin: "0 0 4px 0" }}> Rankings</h2>
             <p style={{ color: "var(--muted)", fontSize: "0.8rem", margin: 0 }}>Global ranking across all community members</p>
           </div>
           {/* Tabs */}
@@ -364,10 +364,10 @@ export default function StatsPage() {
               </div>
               <div style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--fg)", marginBottom: 2 }}>{leaderboardData[0].name}</div>
               <div style={{ fontSize: "0.75rem", color: "var(--muted)", marginBottom: 8 }}>{leaderboardData[0].user}</div>
-              <div style={{ fontSize: "1rem", fontWeight: 700, color: "var(--accent)" }}>
+              <div style={{ fontSize: "1rem", fontWeight: 700, color: "#fff" }}>
                 {activeTab === "wins" ? `${leaderboardData[0].wins} wins` : `${leaderboardData[0].rep.toLocaleString()} REP`}
               </div>
-              <div style={{ height: 140, width: 80, background: "rgba(124,58,237,0.12)", border: "1px solid rgba(124,58,237,0.25)", borderRadius: "8px 8px 0 0", margin: "12px auto 0" }} />
+              <div style={{ height: 140, width: 80, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(124,58,237,0.25)", borderRadius: "8px 8px 0 0", margin: "12px auto 0" }} />
             </div>
             {/* 3rd */}
             <div style={{ textAlign: "center" }}>
@@ -411,7 +411,7 @@ export default function StatsPage() {
                       <Avatar initials={row.initials} color={row.color} size={28} />
                       <div>
                         <div style={{ fontWeight: 600, color: row.isYou ? "var(--accent)" : "var(--fg)", fontSize: "0.88rem" }}>
-                          {row.name} {row.isYou && <span style={{ fontSize: "0.7rem", color: "var(--accent)", marginLeft: 4 }}>(you)</span>}
+                          {row.name} {row.isYou && <span style={{ fontSize: "0.7rem", color: "#fff", marginLeft: 4 }}>(you)</span>}
                         </div>
                         <div style={{ fontSize: "0.72rem", color: "var(--muted)" }}>{row.user}</div>
                       </div>

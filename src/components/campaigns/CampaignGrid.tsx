@@ -38,7 +38,7 @@ export function CampaignGrid() {
   if (campaigns.length === 0) {
     return (
       <div style={{ textAlign: "center", padding: "80px 0", color: "var(--muted)" }}>
-        <div style={{ fontSize: "2.5rem", marginBottom: 16 }}>🔍</div>
+        <div style={{ fontSize: "2.5rem", marginBottom: 16 }}></div>
         <h3 style={{ fontSize: "1.2rem", marginBottom: 8, color: "var(--fg)" }}>No campaigns active</h3>
         <p style={{ fontSize: "0.88rem" }}>Check back later for new opportunities.</p>
       </div>

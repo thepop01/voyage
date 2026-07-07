@@ -36,9 +36,9 @@ export default function ToolsHubPage() {
       href: "/tools/polymarket",
       gradient: "linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(30,20,80,0.35) 100%)",
       border: "rgba(124,58,237,0.25)",
-      accent: "#7c3aed",
-      accentLight: "#93c5fd",
-      icon: "🔮",
+      accent: "#fff",
+      accentLight: "#fff",
+      icon: "",
       stats: [
         { label: "Wallets", value: wallets.length.toString() },
         { label: "Open Positions", value: "—" },
@@ -51,9 +51,9 @@ export default function ToolsHubPage() {
       description: "Automatically checks all your connected wallets against upcoming NFT mint whitelists. Get instant alerts when you're selected for a mint.",
       href: "/tools/nft-mint",
       gradient: "linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(30,40,30,0.3) 100%)",
-      border: "rgba(16,185,129,0.25)",
-      accent: "#10b981",
-      accentLight: "#6ee7b7",
+      border: "rgba(255,255,255,0.15)",
+      accent: "#fff",
+      accentLight: "#fff",
       icon: "🖼️",
       stats: [
         { label: "Wallets", value: wallets.length.toString() },
@@ -90,8 +90,8 @@ export default function ToolsHubPage() {
             border: "1px solid rgba(124,58,237,0.35)",
             borderRadius: 100,
           }}>
-            <span style={{ color: "#60a5fa", display: "flex" }}><BotIcon size={16} /></span>
-            <span style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#60a5fa" }}>
+            <span style={{ color: "#fff", display: "flex" }}><BotIcon size={16} /></span>
+            <span style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff" }}>
               Automated Trackers
             </span>
           </div>
@@ -206,13 +206,13 @@ export default function ToolsHubPage() {
           <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--muted)" }}>
             Connected Wallets ({wallets.length})
           </span>
-          <Link href="/profile" style={{ fontSize: "0.72rem", fontWeight: 600, color: "#7c3aed", textDecoration: "none" }}>
+          <Link href="/profile" style={{ fontSize: "0.72rem", fontWeight: 600, color: "#fff", textDecoration: "none" }}>
             Manage in Profile →
           </Link>
         </div>
         {wallets.length === 0 ? (
           <p style={{ fontSize: "0.85rem", color: "var(--muted)", margin: 0 }}>
-            No wallets connected yet. Head to your <Link href="/profile" style={{ color: "#7c3aed" }}>Profile</Link> to add wallets and start tracking.
+            No wallets connected yet. Head to your <Link href="/profile" style={{ color: "#fff" }}>Profile</Link> to add wallets and start tracking.
           </p>
         ) : (
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>

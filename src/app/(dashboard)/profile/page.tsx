@@ -36,7 +36,7 @@ function WalletManager() {
           <option value="Solana" style={{ color: "var(--bg)" }}>Solana</option>
           <option value="Polygon" style={{ color: "var(--bg)" }}>Polygon</option>
         </select>
-        <button type="submit" className="glass-button" style={{ padding: "14px 24px", borderRadius: 8, background: "linear-gradient(135deg, var(--accent), #60a5fa)", color: "#fff", border: "none" }}>
+        <button type="submit" className="glass-button" style={{ padding: "14px 24px", borderRadius: 8, background: "#fff", color: "#fff", border: "none" }}>
           Add Wallet
         </button>
       </form>
@@ -59,13 +59,13 @@ function WalletManager() {
               <div>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1.1rem", color: w.isDefault ? "var(--fg)" : "var(--fg-light)" }}>{w.address}</div>
                 <div style={{ fontSize: "0.8rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.05em", marginTop: 6, display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ width: 8, height: 8, borderRadius: "50%", background: w.chain === "Solana" ? "#14F195" : w.chain === "Polygon" ? "#8247E5" : "#627EEA" }}></span>
+                  <span style={{ width: 8, height: 8, borderRadius: "50%", background: w.chain === "Solana" ? "#fff" : w.chain === "Polygon" ? "#fff" : "#fff" }}></span>
                   {w.chain}
                 </div>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                 {w.isDefault ? (
-                  <span style={{ padding: "4px 12px", borderRadius: 100, fontSize: "0.75rem", fontWeight: 700, background: "rgba(124,58,237,0.15)", color: "var(--accent)", border: "1px solid rgba(124,58,237,0.3)" }}>Primary</span>
+                  <span style={{ padding: "4px 12px", borderRadius: 100, fontSize: "0.75rem", fontWeight: 700, background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)" }}>Primary</span>
                 ) : (
                   <button onClick={() => setDefaultWallet(w.id, w.chain)} style={{ background: "transparent", border: "1px solid var(--border)", color: "var(--fg-light)", padding: "6px 16px", borderRadius: 100, fontSize: "0.75rem", cursor: "pointer", transition: "all 0.2s" }} onMouseOver={e => e.currentTarget.style.color = "var(--fg)"} onMouseOut={e => e.currentTarget.style.color = "var(--fg-light)"}>
                     Set as Primary
@@ -113,7 +113,7 @@ export default function ProfilePage() {
         {/* Glow behind avatar */}
         <div style={{ position: "absolute", top: "50%", left: 80, transform: "translate(-50%, -50%)", width: 150, height: 150, background: "var(--accent)", filter: "blur(80px)", opacity: 0.3, pointerEvents: "none" }} />
         
-        <div style={{ width: 120, height: 120, borderRadius: "50%", background: "linear-gradient(135deg, var(--accent), #60a5fa)", padding: 4, flexShrink: 0, position: "relative", zIndex: 1 }}>
+        <div style={{ width: 120, height: 120, borderRadius: "50%", background: "#fff", padding: 4, flexShrink: 0, position: "relative", zIndex: 1 }}>
           <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
              {session?.user?.image ? (
                <img src={session.user.image} alt="Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -126,9 +126,9 @@ export default function ProfilePage() {
         <div style={{ position: "relative", zIndex: 1, flex: 1 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
             <h1 style={{ fontSize: "2.5rem", margin: 0, lineHeight: 1 }}>{session?.user?.name || "Ninja"}</h1>
-            <span style={{ padding: "4px 10px", borderRadius: 100, fontSize: "0.7rem", fontWeight: 700, background: "rgba(16,185,129,0.1)", color: "#10b981", border: "1px solid rgba(16,185,129,0.2)" }}>Verified</span>
+            <span style={{ padding: "4px 10px", borderRadius: 100, fontSize: "0.7rem", fontWeight: 700, background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(16,185,129,0.2)" }}>Verified</span>
           </div>
-          <div style={{ color: "var(--accent)", fontFamily: "var(--font-display)", fontSize: "1.1rem", marginBottom: 16 }}>
+          <div style={{ color: "#fff", fontFamily: "var(--font-display)", fontSize: "1.1rem", marginBottom: 16 }}>
             @{session?.user?.name?.toLowerCase().replace(/\s+/g, '_') || "ninja_user"}
           </div>
           <p style={{ color: "var(--fg-light)", margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -156,7 +156,7 @@ export default function ProfilePage() {
         </div>
         <div className="glass-panel" style={{ padding: "20px 24px", textAlign: "center" }}>
           <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--muted)", fontWeight: 700, letterSpacing: "0.05em", marginBottom: 8 }}>Total REP</div>
-          <div style={{ fontSize: "2rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "var(--accent)" }}>{session?.user?.reputationScore || "3,120"}</div>
+          <div style={{ fontSize: "2rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff" }}>{session?.user?.reputationScore || "3,120"}</div>
         </div>
         <div className="glass-panel" style={{ padding: "20px 24px", textAlign: "center" }}>
           <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--muted)", fontWeight: 700, letterSpacing: "0.05em", marginBottom: 8 }}>Approval Rate</div>
@@ -202,7 +202,7 @@ export default function ProfilePage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[
                 { title: "DeFi Protocol v1 Beta", type: "Submission Approved", time: "2 days ago", pts: "+500 REP" },
-                { title: "L2 Bridge Alpha", type: "Reward Claimed", time: "1 week ago", pts: "🏆 $1,200 USDC" },
+                { title: "L2 Bridge Alpha", type: "Reward Claimed", time: "1 week ago", pts: " $1,200 USDC" },
                 { title: "Solana L3 Early Access", type: "Submission Under Review", time: "2 weeks ago", pts: "Pending" }
               ].map((act, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 0", borderBottom: i < 2 ? "1px solid var(--border)" : "none" }}>
@@ -210,7 +210,7 @@ export default function ProfilePage() {
                     <div style={{ fontWeight: 600, color: "var(--fg)", marginBottom: 4 }}>{act.title}</div>
                     <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{act.type} • {act.time}</div>
                   </div>
-                  <div style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: act.pts.includes("Pending") ? "var(--warning)" : "var(--accent)", background: act.pts.includes("🏆") ? "rgba(124,58,237,0.12)" : "transparent", border: act.pts.includes("🏆") ? "1px solid rgba(139,92,246,0.3)" : "none", padding: act.pts.includes("🏆") ? "4px 12px" : 0, borderRadius: 100 }}>
+                  <div style={{ fontWeight: 700, fontFamily: "var(--font-display)", color: act.pts.includes("Pending") ? "var(--warning)" : "var(--accent)", background: act.pts.includes("") ? "rgba(124,58,237,0.12)" : "transparent", border: act.pts.includes("") ? "1px solid rgba(139,92,246,0.3)" : "none", padding: act.pts.includes("") ? "4px 12px" : 0, borderRadius: 100 }}>
                     {act.pts}
                   </div>
                 </div>
@@ -246,14 +246,14 @@ export default function ProfilePage() {
                       borderRadius: 100, 
                       fontSize: "0.75rem", 
                       fontWeight: 700, 
-                      background: row.status === "Approved" ? "rgba(16,185,129,0.1)" : "rgba(234,179,8,0.1)", 
-                      color: row.status === "Approved" ? "#10b981" : "#eab308",
+                      background: row.status === "Approved" ? "rgba(255,255,255,0.08)" : "rgba(234,179,8,0.1)", 
+                      color: row.status === "Approved" ? "#fff" : "#fff",
                       border: row.status === "Approved" ? "1px solid rgba(16,185,129,0.2)" : "1px solid rgba(234,179,8,0.2)"
                     }}>
                       {row.status}
                     </span>
                   </td>
-                  <td style={{ padding: "16px 24px", textAlign: "right", fontFamily: "var(--font-display)", color: "var(--accent)", fontWeight: 700 }}>{row.pts}</td>
+                  <td style={{ padding: "16px 24px", textAlign: "right", fontFamily: "var(--font-display)", color: "#fff", fontWeight: 700 }}>{row.pts}</td>
                   <td style={{ padding: "16px 24px", textAlign: "right", fontFamily: "var(--font-display)", fontWeight: 700 }}>{row.score}</td>
                 </tr>
               ))}
@@ -271,11 +271,11 @@ export default function ProfilePage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 32 }}>
             <div className="glass-panel" style={{ padding: "24px", display: "flex", flexDirection: "column", gap: 8 }}>
               <div style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--muted)", fontWeight: 700 }}>Total Claimed</div>
-              <div style={{ fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "var(--accent)" }}>$1,450.00</div>
+              <div style={{ fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff" }}>$1,450.00</div>
             </div>
             <div className="glass-panel" style={{ padding: "24px", display: "flex", flexDirection: "column", gap: 8 }}>
               <div style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--muted)", fontWeight: 700 }}>Pending Approval</div>
-              <div style={{ fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "var(--warning)" }}>$250.00</div>
+              <div style={{ fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff" }}>$250.00</div>
             </div>
             <div className="glass-panel" style={{ padding: "24px", display: "flex", flexDirection: "column", gap: 8 }}>
               <div style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--muted)", fontWeight: 700 }}>Total Earned REP</div>
@@ -310,13 +310,13 @@ export default function ProfilePage() {
                           borderRadius: 100,
                           fontSize: "0.75rem",
                           fontWeight: 700,
-                          background: "rgba(124,58,237,0.12)",
-                          border: "1px solid rgba(139,92,246,0.3)",
-                          color: "#c4b5fd",
+                          background: "rgba(255,255,255,0.08)",
+                          border: "1px solid rgba(255,255,255,0.15)",
+                          color: "#fff",
                           fontFamily: "var(--font-display)",
                           whiteSpace: "nowrap"
                         }}>
-                          🏆 {row.amt}
+                           {row.amt}
                         </span>
                       </td>
                       <td style={{ padding: "16px 24px" }}>
@@ -334,13 +334,13 @@ export default function ProfilePage() {
 
             <div className="glass-panel" style={{ padding: 32, borderTop: "2px solid var(--accent)", background: "rgba(10,20,32,0.6)" }}>
               <h4 style={{ margin: "0 0 16px 0", fontSize: "1.1rem", display: "flex", alignItems: "center", gap: 10 }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 Locked Rewards
               </h4>
               <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.5, marginBottom: 24 }}>
                 The following rewards are locked until the campaign verification phase completes.
               </p>
-              <div style={{ fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "var(--accent)", marginBottom: 8 }}>
+              <div style={{ fontSize: "2.5rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", marginBottom: 8 }}>
                 $250.00
               </div>
               <div style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--muted)", fontWeight: 600, letterSpacing: "0.05em" }}>

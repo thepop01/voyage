@@ -256,12 +256,12 @@ export default function RafflePage() {
           <div style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             padding: "6px 16px",
-            background: "rgba(124,58,237,0.1)",
+            background: "rgba(255,255,255,0.08)",
             border: "1px solid rgba(124,58,237,0.25)",
             borderRadius: 100,
             marginBottom: 24,
           }}>
-            <span style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)" }}>
+            <span style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff" }}>
               Voyage Raffle System
             </span>
           </div>
@@ -306,10 +306,10 @@ export default function RafflePage() {
               >
                 <div style={{
                   width: 40, height: 40, borderRadius: 10,
-                  background: "rgba(124,58,237,0.1)",
+                  background: "rgba(255,255,255,0.08)",
                   border: "1px solid rgba(124,58,237,0.2)",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--accent)",
+                  color: "#fff",
                   flexShrink: 0,
                 }}>
                   {stat.icon}
@@ -337,7 +337,7 @@ export default function RafflePage() {
           borderRadius: 100,
           fontSize: "0.72rem",
           fontWeight: 700,
-          color: "var(--accent)",
+          color: "#fff",
           textTransform: "uppercase",
           letterSpacing: "0.08em",
           display: "flex", alignItems: "center", gap: 6,
@@ -432,12 +432,12 @@ export default function RafflePage() {
                 {isEntered ? (
                   <div style={{
                     padding: "5px 12px",
-                    background: "rgba(124,58,237,0.1)",
+                    background: "rgba(255,255,255,0.08)",
                     border: "1px solid rgba(124,58,237,0.25)",
                     borderRadius: 100,
                     fontSize: "0.65rem",
                     fontWeight: 700,
-                    color: "var(--accent)",
+                    color: "#fff",
                     textTransform: "uppercase",
                     letterSpacing: "0.06em",
                     flexShrink: 0,
@@ -519,10 +519,10 @@ export default function RafflePage() {
                     onClick={() => handleOpenModal(raffle.id)}
                     style={{
                       padding: "8px 20px",
-                      background: "rgba(124,58,237,0.12)",
-                      border: "1px solid rgba(124,58,237,0.3)",
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(255,255,255,0.15)",
                       borderRadius: 10,
-                      color: "var(--accent)",
+                      color: "#fff",
                       fontSize: "0.78rem",
                       fontWeight: 700,
                       cursor: "pointer",
@@ -593,7 +593,7 @@ export default function RafflePage() {
                 onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
                 <td style={{ padding: "16px 20px", fontWeight: 600, fontSize: "0.9rem", color: "var(--fg)" }}>{w.raffle}</td>
-                <td style={{ padding: "16px 20px", color: "var(--accent)", fontWeight: 700 }}>{w.prize}</td>
+                <td style={{ padding: "16px 20px", color: "#fff", fontWeight: 700 }}>{w.prize}</td>
                 <td style={{ padding: "16px 20px", color: "var(--fg-light)", fontSize: "0.85rem" }}>{w.date}</td>
                 <td style={{ padding: "16px 20px" }}>
                   <span style={{
@@ -603,7 +603,7 @@ export default function RafflePage() {
                     borderRadius: 100,
                     fontSize: "0.65rem",
                     fontWeight: 700,
-                    color: "var(--accent)",
+                    color: "#fff",
                     textTransform: "uppercase",
                     letterSpacing: "0.06em",
                   }}>
@@ -638,7 +638,7 @@ export default function RafflePage() {
             </h3>
             
             <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginBottom: 24, lineHeight: 1.5 }}>
-              1 REP = 1 Ticket. You have <strong style={{ color: "var(--accent)" }}>{totalRep.toLocaleString()} REP</strong> available.
+              1 REP = 1 Ticket. You have <strong style={{ color: "#fff" }}>{totalRep.toLocaleString()} REP</strong> available.
             </p>
 
             {/* Wallet Selection if Chain is required */}
@@ -660,7 +660,7 @@ export default function RafflePage() {
                     ))}
                   </select>
                 ) : (
-                  <div style={{ padding: "12px 16px", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: 10, color: "rgba(255,200,200,0.9)", fontSize: "0.85rem" }}>
+                  <div style={{ padding: "12px 16px", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: 10, color: "rgba(255,200,200,0.9)", fontSize: "0.85rem" }}>
                     You don&apos;t have any {selectedRaffle.chain} wallets linked. Go to your Profile to add one first.
                   </div>
                 )}
@@ -671,7 +671,7 @@ export default function RafflePage() {
               <label style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", fontWeight: 600, color: "var(--muted)", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.05em" }}>
                 <span>REP to spend</span>
                 {enteredRaffles[selectedRaffle.id] && selectedRaffle.chain && (
-                  <span style={{ color: "var(--accent)", fontSize: "0.65rem" }}>(Leave empty to just update wallet)</span>
+                  <span style={{ color: "#fff", fontSize: "0.65rem" }}>(Leave empty to just update wallet)</span>
                 )}
               </label>
               <input

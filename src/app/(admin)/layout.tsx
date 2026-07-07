@@ -9,7 +9,7 @@ export default function AdminLayout({
     <div className="min-h-screen flex flex-col font-body">
       <Topbar />
 
-      <div style={{ background: "rgba(239, 68, 68, 0.08)", borderBottom: "1px solid rgba(239, 68, 68, 0.2)", color: "#ef4444", textAlign: "center", padding: "6px", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+      <div style={{ background: "rgba(239, 68, 68, 0.08)", borderBottom: "1px solid rgba(239, 68, 68, 0.2)", color: "#fff", textAlign: "center", padding: "6px", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>
         ⚠ Admin Mode Active
       </div>
 

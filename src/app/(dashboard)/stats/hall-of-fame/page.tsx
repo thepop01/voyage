@@ -2,8 +2,8 @@
 import Link from "next/link"
 
 const VerifiedIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#10b981"/>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#fff"/>
   </svg>
 )
 
@@ -28,7 +28,7 @@ const WinIcon = () => (
 const hallOfFameData = [
   {
     id: 1,
-    type: "WINNER", typeEmoji: "🏆", typeColor: "#f59e0b", typeBg: "rgba(245, 158, 11, 0.12)", typeBorder: "rgba(245, 158, 11, 0.3)",
+    type: "WINNER", typeEmoji: "", typecolor: "#fff", typeBg: "rgba(245, 158, 11, 0.12)", typeBorder: "rgba(245, 158, 11, 0.3)",
     user: "@alpha_dev", name: "Alex Devlin",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
     message: "won the DeFi Protocol v2 campaign",
@@ -38,7 +38,7 @@ const hallOfFameData = [
   },
   {
     id: 2,
-    type: "GOAT", typeEmoji: "🌟", typeColor: "#c4b5fd", typeBg: "rgba(124, 58, 237, 0.15)", typeBorder: "rgba(139, 92, 246, 0.35)",
+    type: "GOAT", typeEmoji: "🌟", typecolor: "#fff", typeBg: "rgba(124, 58, 237, 0.15)", typeBorder: "rgba(139, 92, 246, 0.35)",
     user: "@crypto_king", name: "Kyrie Nakamura",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
     message: "became the all-time highest REP holder with",
@@ -48,7 +48,7 @@ const hallOfFameData = [
   },
   {
     id: 3,
-    type: "GIFT", typeEmoji: "🎁", typeColor: "#f472b6", typeBg: "rgba(244, 114, 182, 0.12)", typeBorder: "rgba(244, 114, 182, 0.3)",
+    type: "GIFT", typeEmoji: "", typeColor: "#fff", typeBg: "rgba(244, 114, 182, 0.12)", typeBorder: "rgba(244, 114, 182, 0.3)",
     user: "@nft_whale", name: "Nadia Fontaine",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
     message: "received a legendary Solana Alpha NFT whitelist as a surprise",
@@ -58,7 +58,7 @@ const hallOfFameData = [
   },
   {
     id: 4,
-    type: "STREAK", typeEmoji: "🔥", typeColor: "#fb923c", typeBg: "rgba(251, 146, 60, 0.12)", typeBorder: "rgba(251, 146, 60, 0.3)",
+    type: "STREAK", typeEmoji: "", typeColor: "#fff", typeBg: "rgba(251, 146, 60, 0.12)", typeBorder: "rgba(251, 146, 60, 0.3)",
     user: "@chain_runner", name: "Chen Ruiz",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
     message: "completed 30 campaigns in a row and claimed a",
@@ -68,7 +68,7 @@ const hallOfFameData = [
   },
   {
     id: 5,
-    type: "WINNER", typeEmoji: "🏆", typeColor: "#f59e0b", typeBg: "rgba(245, 158, 11, 0.12)", typeBorder: "rgba(245, 158, 11, 0.3)",
+    type: "WINNER", typeEmoji: "", typecolor: "#fff", typeBg: "rgba(245, 158, 11, 0.12)", typeBorder: "rgba(245, 158, 11, 0.3)",
     user: "@dao_maker", name: "Dmitri Aoki",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
     message: "won the Solana L3 Alpha raffle and earned",

@@ -55,7 +55,7 @@ function XIcon() {
 const MINTS: Mint[] = [
   { id: "m1", name: "Azuki Elementals", chain: "Ethereum", mintDate: new Date(Date.now() + 4 * 3600 * 1000), mintPrice: "0.5 ETH", supply: "10,000", image: "🌊", twitter: "https://x.com/Azuki", floorPrice: "2.1 ETH" },
   { id: "m2", name: "Pudgy Penguins 2", chain: "Ethereum", mintDate: new Date(Date.now() + 26 * 3600 * 1000), mintPrice: "0.8 ETH", supply: "8,888", image: "🐧", twitter: "https://x.com/pudaborgs", floorPrice: "11.2 ETH" },
-  { id: "m3", name: "DeGods Genesis", chain: "Solana", mintDate: new Date(Date.now() + 50 * 3600 * 1000), mintPrice: "3 SOL", supply: "5,000", image: "⚡", twitter: "https://x.com/DeGodsNFT" },
+  { id: "m3", name: "DeGods Genesis", chain: "Solana", mintDate: new Date(Date.now() + 50 * 3600 * 1000), mintPrice: "3 SOL", supply: "5,000", image: "", twitter: "https://x.com/DeGodsNFT" },
   { id: "m4", name: "Lil Pudgys Drop", chain: "Ethereum", mintDate: new Date(Date.now() + 72 * 3600 * 1000), mintPrice: "0.2 ETH", supply: "22,222", image: "🧊", twitter: "https://x.com/lilpudgys", floorPrice: "0.9 ETH" },
   { id: "m5", name: "y00ts Polygon", chain: "Polygon", mintDate: new Date(Date.now() + 96 * 3600 * 1000), mintPrice: "80 MATIC", supply: "15,000", image: "🎨", twitter: "https://x.com/y00tsNFT" },
   { id: "m6", name: "Mad Lads S2", chain: "Solana", mintDate: new Date(Date.now() + 120 * 3600 * 1000), mintPrice: "5 SOL", supply: "7,777", image: "😎", twitter: "https://x.com/MadLadsNFT" },
@@ -109,7 +109,7 @@ function CountdownDisplay({ date }: { date: Date }) {
   return (
     <span style={{
       fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "0.82rem",
-      color: isLive ? "#10b981" : "#a78bfa",
+      color: isLive ? "#fff" : "#fff",
       animation: isLive ? "blink 1s ease-in-out infinite" : undefined,
     }}>{text}</span>
   )
@@ -117,9 +117,9 @@ function CountdownDisplay({ date }: { date: Date }) {
 
 /* ── Helpers ──────────────────────────────────────── */
 const CHAIN_COLORS: Record<Chain, { color: string; bg: string; border: string }> = {
-  Ethereum: { color: "#7c3aed", bg: "rgba(124,58,237,0.1)", border: "rgba(124,58,237,0.3)" },
-  Solana:   { color: "#10b981", bg: "rgba(16,185,129,0.1)", border: "rgba(16,185,129,0.3)" },
-  Polygon:  { color: "#8b5cf6", bg: "rgba(139,92,246,0.1)", border: "rgba(139,92,246,0.3)" },
+  Ethereum: { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)" },
+  Solana:   { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)" },
+  Polygon:  { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)" },
 }
 
 const STATUS_FILTERS: StatusFilter[] = ["All", "Whitelisted", "Not Selected", "Pending"]
@@ -182,7 +182,7 @@ export default function NftMintTrackerPage() {
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{
             width: 52, height: 52, borderRadius: 14,
-            background: "rgba(16,185,129,0.2)", border: "1px solid rgba(16,185,129,0.35)",
+            background: "rgba(255,255,255,0.15)", border: "1px solid rgba(16,185,129,0.35)",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: "1.6rem",
           }}>🖼️</div>
@@ -197,7 +197,7 @@ export default function NftMintTrackerPage() {
             padding: "10px 18px", borderRadius: 12,
             background: showSettings ? "rgba(16,185,129,0.15)" : "rgba(255,255,255,0.05)",
             border: `1px solid ${showSettings ? "rgba(16,185,129,0.35)" : "rgba(255,255,255,0.1)"}`,
-            color: showSettings ? "#6ee7b7" : "var(--fg-light)",
+            color: showSettings ? "#fff" : "var(--fg-light)",
             fontSize: "0.8rem", fontWeight: 600, cursor: "pointer",
             display: "flex", alignItems: "center", gap: 6, transition: "all 0.2s",
           }}
@@ -221,7 +221,7 @@ export default function NftMintTrackerPage() {
               <span style={{ fontSize: "0.85rem", color: "var(--fg-light)" }}>Alert when WL status changes for any wallet</span>
               <div onClick={() => setAlertWlConfirmed(!alertWlConfirmed)} style={{
                 width: 40, height: 22, borderRadius: 100, cursor: "pointer",
-                background: alertWlConfirmed ? "#10b981" : "rgba(255,255,255,0.1)",
+                background: alertWlConfirmed ? "#fff" : "rgba(255,255,255,0.1)",
                 border: `1px solid ${alertWlConfirmed ? "rgba(16,185,129,0.6)" : "rgba(255,255,255,0.15)"}`,
                 position: "relative", transition: "all 0.2s",
               }}>
@@ -236,7 +236,7 @@ export default function NftMintTrackerPage() {
               <span style={{ fontSize: "0.85rem", color: "var(--fg-light)" }}>Alert before mint goes live</span>
               <div onClick={() => setAlertBeforeMint(!alertBeforeMint)} style={{
                 width: 40, height: 22, borderRadius: 100, cursor: "pointer",
-                background: alertBeforeMint ? "#10b981" : "rgba(255,255,255,0.1)",
+                background: alertBeforeMint ? "#fff" : "rgba(255,255,255,0.1)",
                 border: `1px solid ${alertBeforeMint ? "rgba(16,185,129,0.6)" : "rgba(255,255,255,0.15)"}`,
                 position: "relative", transition: "all 0.2s",
               }}>
@@ -279,7 +279,7 @@ export default function NftMintTrackerPage() {
               style={{
                 padding: "6px 12px", borderRadius: 8, border: "none",
                 background: chainFilter === chain ? "rgba(16,185,129,0.15)" : "transparent",
-                color: chainFilter === chain ? "#6ee7b7" : "var(--muted)",
+                color: chainFilter === chain ? "#fff" : "var(--muted)",
                 fontSize: "0.72rem", fontWeight: 700, cursor: "pointer",
                 transition: "all 0.15s",
               }}
@@ -300,7 +300,7 @@ export default function NftMintTrackerPage() {
               style={{
                 padding: "6px 12px", borderRadius: 8, border: "none",
                 background: statusFilter === sf ? "rgba(16,185,129,0.15)" : "transparent",
-                color: statusFilter === sf ? "#6ee7b7" : "var(--muted)",
+                color: statusFilter === sf ? "#fff" : "var(--muted)",
                 fontSize: "0.72rem", fontWeight: 700, cursor: "pointer",
                 transition: "all 0.15s",
               }}
@@ -321,7 +321,7 @@ export default function NftMintTrackerPage() {
               style={{
                 padding: "6px 12px", borderRadius: 8, border: "none",
                 background: viewMode === v.value ? "rgba(16,185,129,0.15)" : "transparent",
-                color: viewMode === v.value ? "#6ee7b7" : "var(--muted)",
+                color: viewMode === v.value ? "#fff" : "var(--muted)",
                 fontSize: "0.72rem", fontWeight: 700, cursor: "pointer",
                 transition: "all 0.15s",
               }}
@@ -333,10 +333,10 @@ export default function NftMintTrackerPage() {
       {/* ─── Summary Stats ─────────────────────────────── */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 28 }}>
         {[
-          { label: "Upcoming Mints", value: stats.mintCount.toString(), color: "#a78bfa" },
-          { label: "Wallets Checked", value: wallets.length.toString(), color: "#7c3aed" },
-          { label: "WL Hits", value: stats.totalWl.toString(), color: "#10b981" },
-          { label: "Checks Run", value: stats.totalChecked.toString(), color: "#8b5cf6" },
+          { label: "Upcoming Mints", value: stats.mintCount.toString(), color: "#fff" },
+          { label: "Wallets Checked", value: wallets.length.toString(), color: "#fff" },
+          { label: "WL Hits", value: stats.totalWl.toString(), color: "#fff" },
+          { label: "Checks Run", value: stats.totalChecked.toString(), color: "#fff" },
         ].map((s, i) => (
           <div key={i} style={{
             padding: "18px 20px", borderRadius: 16,
@@ -399,10 +399,10 @@ export default function NftMintTrackerPage() {
 
                   <div style={{
                     padding: "6px 10px", borderRadius: 8, textAlign: "center",
-                    background: wlCount > 0 ? "rgba(16,185,129,0.1)" : "rgba(255,255,255,0.03)",
-                    border: `1px solid ${wlCount > 0 ? "rgba(16,185,129,0.25)" : "rgba(255,255,255,0.07)"}`,
+                    background: wlCount > 0 ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.03)",
+                    border: `1px solid ${wlCount > 0 ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.07)"}`,
                     fontSize: "0.72rem", fontWeight: 700,
-                    color: wlCount > 0 ? "#10b981" : "var(--muted)",
+                    color: wlCount > 0 ? "#fff" : "var(--muted)",
                   }}>
                     {wlCount > 0 ? `✓ ${wlCount}/${wallets.length} wallets WL'd` : `0/${wallets.length} whitelisted`}
                   </div>
@@ -429,7 +429,7 @@ export default function NftMintTrackerPage() {
                     {mint.floorPrice && (
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, fontSize: "0.75rem" }}>
                         <span style={{ color: "var(--muted)" }}>Existing Floor</span>
-                        <span style={{ fontWeight: 700, color: "#10b981" }}>{mint.floorPrice}</span>
+                        <span style={{ fontWeight: 700, color: "#fff" }}>{mint.floorPrice}</span>
                       </div>
                     )}
                     <div style={{ fontSize: "0.72rem", color: "var(--muted)", lineHeight: 1.5, marginTop: 8 }}>
@@ -456,7 +456,7 @@ export default function NftMintTrackerPage() {
             background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)",
           }}>
             <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>No wallets connected.</p>
-            <Link href="/profile" style={{ color: "#10b981", fontSize: "0.85rem", fontWeight: 600 }}>Add wallets in Profile →</Link>
+            <Link href="/profile" style={{ color: "#fff", fontSize: "0.85rem", fontWeight: 600 }}>Add wallets in Profile →</Link>
           </div>
         ) : (
           <div style={{
@@ -501,20 +501,20 @@ export default function NftMintTrackerPage() {
                             {status === "wl" ? (
                               <span style={{
                                 padding: "4px 10px", borderRadius: 8,
-                                background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.3)",
-                                color: "#10b981", fontSize: "0.68rem", fontWeight: 800,
+                                background: "rgba(255,255,255,0.08)", border: "1px solid rgba(16,185,129,0.3)",
+                                color: "#fff", fontSize: "0.68rem", fontWeight: 800,
                               }}>✓ WL</span>
                             ) : status === "pending" ? (
                               <span style={{
                                 padding: "4px 10px", borderRadius: 8,
-                                background: "rgba(167,139,250,0.1)", border: "1px solid rgba(167,139,250,0.25)",
-                                color: "#a78bfa", fontSize: "0.68rem", fontWeight: 700,
+                                background: "rgba(255,255,255,0.08)", border: "1px solid rgba(167,139,250,0.25)",
+                                color: "#fff", fontSize: "0.68rem", fontWeight: 700,
                               }}>⏳ Pending</span>
                             ) : (
                               <span style={{
                                 padding: "4px 10px", borderRadius: 8,
                                 background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.15)",
-                                color: "#ef4444", fontSize: "0.68rem", fontWeight: 700,
+                                color: "#fff", fontSize: "0.68rem", fontWeight: 700,
                                 opacity: 0.7,
                               }}>✗</span>
                             )}
@@ -559,11 +559,11 @@ export default function NftMintTrackerPage() {
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, fontSize: "0.75rem" }}>
                   <span style={{ color: "var(--muted)" }}>Floor Now</span>
-                  <span style={{ fontWeight: 700, color: "#10b981" }}>{pm.floorNow}</span>
+                  <span style={{ fontWeight: 700, color: "#fff" }}>{pm.floorNow}</span>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, fontSize: "0.75rem" }}>
                   <span style={{ color: "var(--muted)" }}>ROI</span>
-                  <span style={{ fontWeight: 800, fontFamily: "var(--font-display)", color: "#10b981" }}>{pm.roi}</span>
+                  <span style={{ fontWeight: 800, fontFamily: "var(--font-display)", color: "#fff" }}>{pm.roi}</span>
                 </div>
                 <div style={{ fontSize: "0.65rem", color: "var(--muted)", marginTop: 6 }}>{pm.date}</div>
               </div>

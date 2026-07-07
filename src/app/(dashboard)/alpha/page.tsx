@@ -58,24 +58,24 @@ interface AlphaPost {
 /* ─── Mock Callers ───────────────────────────────────────────────── */
 const CALLERS: AlphaCaller[] = [
   {
-    id: "c1", username: "0xVault", handle: "@0xvault", avatar: "🦅", avatarColor: "#7c3aed",
+    id: "c1", username: "0xVault", handle: "@0xvault", avatar: "", avatarColor: "#fff",
     totalAlphas: 47, followers: 2841, bio: "On-chain degen. Crypto & DeFi calls since 2018.", verified: true,
     xLink: "https://x.com/0xvault",
     stats: { Crypto: { total: 28, wins: 21, likes: 0 }, Meme: { total: 11, wins: 7, likes: 0 } },
   },
   {
-    id: "c2", username: "NeuralNomad", handle: "@neuralnomad", avatar: "🧠", avatarColor: "#8b5cf6",
+    id: "c2", username: "NeuralNomad", handle: "@neuralnomad", avatar: "", avatarColor: "#fff",
     totalAlphas: 31, followers: 1420, bio: "Polymarket whale. Rating prediction markets so you don't have to.", verified: true,
     xLink: "https://x.com/neuralnomad",
     stats: { Polymarket: { total: 31, wins: 18, likes: 0 } },
   },
   {
-    id: "c3", username: "FlipKing", handle: "@flipking", avatar: "👑", avatarColor: "#a78bfa",
+    id: "c3", username: "FlipKing", handle: "@flipking", avatar: "👑", avatarcolor: "#fff",
     totalAlphas: 8, followers: 389, bio: "Meme coin flipper. Early in most memes that matter.", verified: false,
     stats: { Meme: { total: 2, wins: 1, likes: 0 } },
   },
   {
-    id: "c4", username: "AlphaQuant", handle: "@alphaquant", avatar: "📊", avatarColor: "#10b981",
+    id: "c4", username: "AlphaQuant", handle: "@alphaquant", avatar: "", avatarcolor: "#fff",
     totalAlphas: 22, followers: 976, bio: "Quant trader. Stocks & macro calls with data-backed thesis.", verified: true,
     xLink: "https://x.com/alphaquant",
     stats: { Stock: { total: 15, wins: 11, likes: 0 }, Crypto: { total: 7, wins: 4, likes: 0 } },
@@ -101,10 +101,10 @@ const CATEGORY_TABS: CallCategory[] = ["Polymarket", "Crypto", "Stock", "Meme"]
 const ALL_TABS: FeedTab[] = ["All", "Following", "Saved", ...CATEGORY_TABS]
 
 const CATEGORY_META: Record<CallCategory, { color: string; bg: string; border: string; icon: string; rateType: "like" | "market" }> = {
-  Polymarket: { color: "#3b82f6", bg: "rgba(59,130,246,0.1)", border: "rgba(59,130,246,0.3)", icon: "🔮", rateType: "market" },
-  Crypto:     { color: "#7c3aed", bg: "rgba(124,58,237,0.1)", border: "rgba(124,58,237,0.3)", icon: "₿", rateType: "market" },
-  Stock:      { color: "#10b981", bg: "rgba(16,185,129,0.1)", border: "rgba(16,185,129,0.3)", icon: "📈", rateType: "market" },
-  Meme:       { color: "#a78bfa", bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.3)", icon: "🐸", rateType: "market" },
+  Polymarket: { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)", icon: "", rateType: "market" },
+  Crypto:     { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)", icon: "", rateType: "market" },
+  Stock:      { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)", icon: "📈", rateType: "market" },
+  Meme:       { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(167,139,250,0.3)", icon: "🐸", rateType: "market" },
 }
 
 function calcOverallSuccessRate(caller: AlphaCaller): number | null {
@@ -278,9 +278,9 @@ export default function AlphaPage() {
   }, [posts])
 
   const getOutcomeBadge = (post: AlphaPost) => {
-    if (post.outcome === "win") return { label: "✓ Win", color: "#10b981", bg: "rgba(16,185,129,0.12)", border: "rgba(16,185,129,0.3)" }
-    if (post.outcome === "loss") return { label: "✗ Loss", color: "#ef4444", bg: "rgba(239,68,68,0.12)", border: "rgba(239,68,68,0.3)" }
-    return { label: "⏳ Open", color: "#a78bfa", bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.25)" }
+    if (post.outcome === "win") return { label: "✓ Win", color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)" }
+    if (post.outcome === "loss") return { label: "✗ Loss", color: "#fff", bg: "rgba(239,68,68,0.12)", border: "rgba(239,68,68,0.3)" }
+    return { label: "⏳ Open", color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)" }
   }
 
   const SORT_OPTIONS: { label: string; value: SortMode }[] = [
@@ -302,8 +302,8 @@ export default function AlphaPage() {
         <div style={{ position: "absolute", inset: 0, borderRadius: 24, pointerEvents: "none", opacity: 0.05, backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div style={{ position: "relative", zIndex: 1 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 20, padding: "5px 16px", background: "rgba(139,92,246,0.14)", border: "1px solid rgba(139,92,246,0.35)", borderRadius: 100 }}>
-            <span style={{ color: "#8b5cf6", display: "flex" }}><BrainIcon /></span>
-            <span style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8b5cf6" }}>Alpha Intelligence Feed</span>
+            <span style={{ color: "#fff", display: "flex" }}><BrainIcon /></span>
+            <span style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff" }}>Alpha Intelligence Feed</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
             <div>
@@ -316,9 +316,9 @@ export default function AlphaPage() {
             </div>
             <div style={{ display: "flex", gap: 12, flexShrink: 0, alignItems: "center" }}>
               {[
-                { value: `${CALLERS.length}`, label: "Active Callers", color: "#8b5cf6" },
-                { value: `${posts.length}`, label: "Alpha Posts", color: "#7c3aed" },
-                { value: "73%", label: "Avg Win Rate", color: "#10b981" },
+                { value: `${CALLERS.length}`, label: "Active Callers", color: "#fff" },
+                { value: `${posts.length}`, label: "Alpha Posts", color: "#fff" },
+                { value: "73%", label: "Avg Win Rate", color: "#fff" },
               ].map((s, i) => (
                 <div key={i} style={{ padding: "14px 18px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 14, textAlign: "center" }}>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 800, color: s.color, lineHeight: 1 }}>{s.value}</div>
@@ -327,8 +327,8 @@ export default function AlphaPage() {
               ))}
               <button onClick={() => setShowCreateModal(true)} style={{
                 display: "flex", alignItems: "center", gap: 8, padding: "14px 22px", borderRadius: 14,
-                background: "rgba(124,58,237,0.25)", border: "1px solid rgba(124,58,237,0.5)",
-                color: "#c4b5fd", fontSize: "0.85rem", fontWeight: 700, cursor: "pointer", transition: "all 0.2s",
+                background: "rgba(124,58,237,0.25)", border: "1px solid rgba(255,255,255,0.15)",
+                color: "#fff", fontSize: "0.85rem", fontWeight: 700, cursor: "pointer", transition: "all 0.2s",
               }}
                 onMouseEnter={e => { e.currentTarget.style.background = "rgba(124,58,237,0.35)" }}
                 onMouseLeave={e => { e.currentTarget.style.background = "rgba(124,58,237,0.25)" }}
@@ -344,7 +344,7 @@ export default function AlphaPage() {
       {trendingPosts.length > 0 && (
         <div style={{ marginBottom: 28 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-            <span style={{ display: "flex", color: "#ef4444" }}><FireIcon /></span>
+            <span style={{ display: "flex", color: "#fff" }}><FireIcon /></span>
             <div style={{ fontSize: "0.67rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)" }}>Trending Now</div>
             <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.06)" }} />
           </div>
@@ -367,7 +367,7 @@ export default function AlphaPage() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.68rem", color: "var(--muted)" }}>
                     <span>♥ {post.likes}</span>
                     {post.ticker && <span style={{ fontWeight: 700, color: "var(--fg-light)" }}>${post.ticker}</span>}
-                    {post.targetPct && <span style={{ color: "#10b981", fontWeight: 700 }}>{post.targetPct}</span>}
+                    {post.targetPct && <span style={{ color: "#fff", fontWeight: 700 }}>{post.targetPct}</span>}
                   </div>
                 </div>
               )
@@ -402,8 +402,8 @@ export default function AlphaPage() {
                       {caller.verified && <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 16, height: 16, borderRadius: "50%", background: caller.avatarColor, color: "#fff" }}><CheckIcon /></span>}
                       {/* Streak badge */}
                       {streak.count >= 2 && (
-                        <span style={{ padding: "1px 6px", borderRadius: 100, fontSize: "0.55rem", fontWeight: 800, background: streak.type === "win" ? "rgba(16,185,129,0.12)" : "rgba(239,68,68,0.1)", border: `1px solid ${streak.type === "win" ? "rgba(16,185,129,0.3)" : "rgba(239,68,68,0.25)"}`, color: streak.type === "win" ? "#10b981" : "#ef4444" }}>
-                          {streak.type === "win" ? "🔥" : "❄️"} {streak.count}
+                        <span style={{ padding: "1px 6px", borderRadius: 100, fontSize: "0.55rem", fontWeight: 800, background: streak.type === "win" ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.08)", border: `1px solid ${streak.type === "win" ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.15)"}`, color: streak.type === "win" ? "#fff" : "#fff" }}>
+                          {streak.type === "win" ? "" : ""} {streak.count}
                         </span>
                       )}
                     </div>
@@ -412,12 +412,12 @@ export default function AlphaPage() {
                   {/* Success rate pill */}
                   <div style={{
                     padding: "5px 10px", borderRadius: 100, textAlign: "center", flexShrink: 0,
-                    background: rate !== null ? (rate >= 60 ? "rgba(16,185,129,0.12)" : rate >= 40 ? "rgba(167,139,250,0.1)" : "rgba(239,68,68,0.1)") : "rgba(255,255,255,0.06)",
+                    background: rate !== null ? (rate >= 60 ? "rgba(255,255,255,0.08)" : rate >= 40 ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.08)") : "rgba(255,255,255,0.06)",
                     border: rate !== null ? (rate >= 60 ? "1px solid rgba(16,185,129,0.3)" : rate >= 40 ? "1px solid rgba(167,139,250,0.25)" : "1px solid rgba(239,68,68,0.25)") : "1px solid rgba(255,255,255,0.1)",
                   }}>
                     {rate !== null ? (
                       <>
-                        <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "0.95rem", lineHeight: 1, color: rate >= 60 ? "#10b981" : rate >= 40 ? "#a78bfa" : "#ef4444" }}>{rate}%</div>
+                        <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "0.95rem", lineHeight: 1, color: rate >= 60 ? "#fff" : rate >= 40 ? "#fff" : "#fff" }}>{rate}%</div>
                         <div style={{ fontSize: "0.58rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--muted)", marginTop: 2 }}>Success</div>
                       </>
                     ) : (
@@ -449,7 +449,7 @@ export default function AlphaPage() {
                     padding: "5px 14px", borderRadius: 100, fontSize: "0.7rem", fontWeight: 700, cursor: "pointer", transition: "all 0.2s", marginLeft: 12, flexShrink: 0,
                     background: isFollowing ? "rgba(124,58,237,0.2)" : "rgba(255,255,255,0.06)",
                     border: `1px solid ${isFollowing ? "rgba(124,58,237,0.4)" : "rgba(255,255,255,0.15)"}`,
-                    color: isFollowing ? "#a78bfa" : "var(--fg-light)",
+                    color: isFollowing ? "#fff" : "var(--fg-light)",
                   }}>{isFollowing ? "Following" : "Follow"}</button>
                 </div>
 
@@ -475,7 +475,7 @@ export default function AlphaPage() {
                       })}
                     </div>
                     {caller.totalAlphas < 10 && (
-                      <div style={{ marginTop: 12, padding: "8px 12px", background: "rgba(167,139,250,0.08)", border: "1px solid rgba(167,139,250,0.2)", borderRadius: 10, fontSize: "0.7rem", color: "#a78bfa" }}>
+                      <div style={{ marginTop: 12, padding: "8px 12px", background: "rgba(167,139,250,0.08)", border: "1px solid rgba(167,139,250,0.2)", borderRadius: 10, fontSize: "0.7rem", color: "#fff" }}>
                         ⚠️ Needs {10 - caller.totalAlphas} more alpha posts to unlock success rate
                       </div>
                     )}
@@ -512,7 +512,7 @@ export default function AlphaPage() {
               <button key={s.value} onClick={() => setSortMode(s.value)} style={{
                 padding: "6px 10px", borderRadius: 8, border: "none",
                 background: sortMode === s.value ? "rgba(124,58,237,0.2)" : "transparent",
-                color: sortMode === s.value ? "#93c5fd" : "var(--muted)",
+                color: sortMode === s.value ? "#fff" : "var(--muted)",
                 fontSize: "0.7rem", fontWeight: 700, cursor: "pointer", transition: "all 0.15s",
               }}>{s.label}</button>
             ))}
@@ -536,7 +536,7 @@ export default function AlphaPage() {
                   padding: "7px 14px", borderRadius: 10, border: "none", cursor: "pointer",
                   fontSize: "0.78rem", fontWeight: 600, whiteSpace: "nowrap", transition: "all 0.18s ease",
                   background: activeTab === tab ? (meta ? meta.bg : isSpecial ? "rgba(124,58,237,0.12)" : "rgba(255,255,255,0.1)") : "transparent",
-                  color: activeTab === tab ? (meta ? meta.color : isSpecial ? "#a78bfa" : "var(--fg)") : "var(--muted)",
+                  color: activeTab === tab ? (meta ? meta.color : isSpecial ? "#fff" : "var(--fg)") : "var(--muted)",
                   boxShadow: activeTab === tab && meta ? `0 0 0 1px ${meta.border}` : activeTab === tab ? "0 0 0 1px rgba(124,58,237,0.3)" : "none",
                 }}>
                   {tab === "Following" && "👁 "}{tab === "Saved" && "🔖 "}
@@ -586,7 +586,7 @@ export default function AlphaPage() {
                           <span style={{ fontWeight: 700, fontSize: "0.85rem" }}>{caller.username}</span>
                           {caller.verified && <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 14, height: 14, borderRadius: "50%", background: caller.avatarColor, color: "#fff" }}><CheckIcon /></span>}
                           {rate !== null ? (
-                            <span style={{ padding: "2px 7px", background: rate >= 60 ? "rgba(16,185,129,0.1)" : "rgba(167,139,250,0.1)", border: `1px solid ${rate >= 60 ? "rgba(16,185,129,0.25)" : "rgba(167,139,250,0.25)"}`, borderRadius: 100, fontSize: "0.62rem", fontWeight: 700, color: rate >= 60 ? "#10b981" : "#a78bfa" }}>{rate}% success</span>
+                            <span style={{ padding: "2px 7px", background: rate >= 60 ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.08)", border: `1px solid ${rate >= 60 ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.15)"}`, borderRadius: 100, fontSize: "0.62rem", fontWeight: 700, color: rate >= 60 ? "#fff" : "#fff" }}>{rate}% success</span>
                           ) : (
                             <span style={{ padding: "2px 7px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 100, fontSize: "0.62rem", fontWeight: 600, color: "var(--muted)" }}>Rate N/A</span>
                           )}
@@ -604,8 +604,8 @@ export default function AlphaPage() {
                   {post.ticker && (
                     <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
                       <span style={{ padding: "3px 10px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, fontFamily: "var(--font-display)", fontSize: "0.82rem", fontWeight: 800, letterSpacing: "0.05em" }}>${post.ticker}</span>
-                      {post.targetPct && <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#10b981" }}>Target {post.targetPct}</span>}
-                      {post.result && <span style={{ fontSize: "0.75rem", fontWeight: 700, color: post.outcome === "win" ? "#10b981" : "#ef4444" }}>{post.result}</span>}
+                      {post.targetPct && <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#fff" }}>Target {post.targetPct}</span>}
+                      {post.result && <span style={{ fontSize: "0.75rem", fontWeight: 700, color: post.outcome === "win" ? "#fff" : "#fff" }}>{post.result}</span>}
                     </div>
                   )}
 
@@ -618,7 +618,7 @@ export default function AlphaPage() {
                       display: "flex", alignItems: "center", gap: 7, padding: "7px 14px",
                       background: post.liked ? "rgba(124,58,237,0.15)" : "rgba(255,255,255,0.04)",
                       border: `1px solid ${post.liked ? "rgba(124,58,237,0.4)" : "rgba(255,255,255,0.1)"}`,
-                      borderRadius: 10, color: post.liked ? "#60a5fa" : "var(--muted)", fontSize: "0.78rem", fontWeight: 700, cursor: "pointer", transition: "all 0.18s ease",
+                      borderRadius: 10, color: post.liked ? "#fff" : "var(--muted)", fontSize: "0.78rem", fontWeight: 700, cursor: "pointer", transition: "all 0.18s ease",
                     }}>
                       <ThumbUpIcon /> {post.likes}
                     </button>
@@ -626,15 +626,15 @@ export default function AlphaPage() {
                       display: "flex", alignItems: "center", gap: 5, padding: "7px 12px",
                       background: post.bookmarked ? "rgba(167,139,250,0.12)" : "rgba(255,255,255,0.04)",
                       border: `1px solid ${post.bookmarked ? "rgba(167,139,250,0.35)" : "rgba(255,255,255,0.1)"}`,
-                      borderRadius: 10, color: post.bookmarked ? "#a78bfa" : "var(--muted)", fontSize: "0.72rem", fontWeight: 700, cursor: "pointer", transition: "all 0.18s",
+                      borderRadius: 10, color: post.bookmarked ? "#fff" : "var(--muted)", fontSize: "0.72rem", fontWeight: 700, cursor: "pointer", transition: "all 0.18s",
                     }}>
                       <BookmarkIcon filled={post.bookmarked} /> {post.bookmarked ? "Saved" : "Save"}
                     </button>
                     <button onClick={() => toggleComments(post.id)} style={{
                       display: "flex", alignItems: "center", gap: 5, padding: "7px 12px",
-                      background: showComments ? "rgba(124,58,237,0.1)" : "rgba(255,255,255,0.04)",
-                      border: `1px solid ${showComments ? "rgba(124,58,237,0.3)" : "rgba(255,255,255,0.1)"}`,
-                      borderRadius: 10, color: showComments ? "#93c5fd" : "var(--muted)", fontSize: "0.72rem", fontWeight: 700, cursor: "pointer", transition: "all 0.18s",
+                      background: showComments ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.04)",
+                      border: `1px solid ${showComments ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.1)"}`,
+                      borderRadius: 10, color: showComments ? "#fff" : "var(--muted)", fontSize: "0.72rem", fontWeight: 700, cursor: "pointer", transition: "all 0.18s",
                     }}>
                       <MessageIcon /> {post.comments.length > 0 ? post.comments.length : "Reply"}
                     </button>
@@ -677,7 +677,7 @@ export default function AlphaPage() {
                         <button onClick={() => submitComment(post.id)} style={{
                           padding: "9px 16px", borderRadius: 10,
                           background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.4)",
-                          color: "#a78bfa", fontSize: "0.78rem", fontWeight: 700, cursor: "pointer",
+                          color: "#fff", fontSize: "0.78rem", fontWeight: 700, cursor: "pointer",
                         }}>Send</button>
                       </div>
                     </div>
@@ -693,7 +693,7 @@ export default function AlphaPage() {
           {/* Top callers */}
           <div style={{ borderRadius: 18, padding: "22px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(16px)" }}>
             <div style={{ fontSize: "0.67rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", marginBottom: 4 }}>Leaderboard</div>
-            <h3 style={{ fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 18 }}>🏆 Top Callers</h3>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 18 }}> Top Callers</h3>
             {CALLERS.filter(c => calcOverallSuccessRate(c) !== null)
               .sort((a, b) => (calcOverallSuccessRate(b) ?? 0) - (calcOverallSuccessRate(a) ?? 0))
               .map((c, i) => {
@@ -705,11 +705,11 @@ export default function AlphaPage() {
                     <div style={{ flex: 1 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
                         <span style={{ fontSize: "0.82rem", fontWeight: 700 }}>{c.username}</span>
-                        {streak.count >= 2 && <span style={{ fontSize: "0.55rem", color: streak.type === "win" ? "#10b981" : "#ef4444" }}>{streak.type === "win" ? "🔥" : "❄️"}{streak.count}</span>}
+                        {streak.count >= 2 && <span style={{ fontSize: "0.55rem", color: streak.type === "win" ? "#fff" : "#fff" }}>{streak.type === "win" ? "" : ""}{streak.count}</span>}
                       </div>
                       <div style={{ fontSize: "0.65rem", color: "var(--muted)" }}>{c.totalAlphas} calls</div>
                     </div>
-                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1rem", color: rate >= 60 ? "#10b981" : "#a78bfa" }}>{rate}%</div>
+                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1rem", color: rate >= 60 ? "#fff" : "#fff" }}>{rate}%</div>
                   </div>
                 )
               })}
@@ -767,8 +767,8 @@ export default function AlphaPage() {
                     <h2 style={{ margin: 0, fontSize: "1.5rem", fontFamily: "var(--font-display)" }}>{caller.username}</h2>
                     {caller.verified && <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 18, height: 18, borderRadius: "50%", background: caller.avatarColor, color: "#fff" }}><CheckIcon /></span>}
                     {streak.count >= 2 && (
-                      <span style={{ padding: "2px 8px", borderRadius: 100, fontSize: "0.65rem", fontWeight: 800, background: streak.type === "win" ? "rgba(16,185,129,0.12)" : "rgba(239,68,68,0.1)", border: `1px solid ${streak.type === "win" ? "rgba(16,185,129,0.3)" : "rgba(239,68,68,0.25)"}`, color: streak.type === "win" ? "#10b981" : "#ef4444" }}>
-                        {streak.type === "win" ? "🔥" : "❄️"} {streak.count} streak
+                      <span style={{ padding: "2px 8px", borderRadius: 100, fontSize: "0.65rem", fontWeight: 800, background: streak.type === "win" ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.08)", border: `1px solid ${streak.type === "win" ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.15)"}`, color: streak.type === "win" ? "#fff" : "#fff" }}>
+                        {streak.type === "win" ? "" : ""} {streak.count} streak
                       </span>
                     )}
                   </div>
@@ -786,7 +786,7 @@ export default function AlphaPage() {
                       padding: "7px 18px", borderRadius: 100, fontSize: "0.78rem", fontWeight: 700, cursor: "pointer", transition: "all 0.2s", flexShrink: 0,
                       background: isFollowing ? "rgba(124,58,237,0.2)" : "rgba(255,255,255,0.06)",
                       border: `1px solid ${isFollowing ? "rgba(124,58,237,0.4)" : "rgba(255,255,255,0.15)"}`,
-                      color: isFollowing ? "#a78bfa" : "var(--fg-light)",
+                      color: isFollowing ? "#fff" : "var(--fg-light)",
                     }}>{isFollowing ? "Following ✓" : "Follow"}</button>
                   </div>
                 </div>
@@ -797,7 +797,7 @@ export default function AlphaPage() {
                 {[
                   { label: "Followers", value: caller.followers.toLocaleString() },
                   { label: "Total Calls", value: caller.totalAlphas.toString() },
-                  { label: "Success Rate", value: rate !== null ? `${rate}%` : "N/A", color: rate !== null ? (rate >= 60 ? "#10b981" : "#a78bfa") : "var(--muted)" },
+                  { label: "Success Rate", value: rate !== null ? `${rate}%` : "N/A", color: rate !== null ? (rate >= 60 ? "#fff" : "#fff") : "var(--muted)" },
                 ].map((s, i) => (
                   <div key={i} style={{ background: "rgba(255,255,255,0.03)", borderRadius: 12, padding: 16, border: "1px solid rgba(255,255,255,0.06)" }}>
                     <div style={{ fontSize: "0.7rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>{s.label}</div>
@@ -811,16 +811,16 @@ export default function AlphaPage() {
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 24 }}>
                   {bestCall && (
                     <div style={{ padding: "12px 16px", borderRadius: 12, background: "rgba(16,185,129,0.06)", border: "1px solid rgba(16,185,129,0.2)" }}>
-                      <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#10b981", marginBottom: 6 }}>🏆 Best Call</div>
+                      <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff", marginBottom: 6 }}> Best Call</div>
                       <div style={{ fontSize: "0.82rem", fontWeight: 700, marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{bestCall.title}</div>
-                      {bestCall.targetPct && <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#10b981" }}>{bestCall.targetPct}</div>}
+                      {bestCall.targetPct && <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#fff" }}>{bestCall.targetPct}</div>}
                     </div>
                   )}
                   {worstCall && (
                     <div style={{ padding: "12px 16px", borderRadius: 12, background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.15)" }}>
-                      <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#ef4444", marginBottom: 6 }}>📉 Worst Call</div>
+                      <div style={{ fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff", marginBottom: 6 }}>📉 Worst Call</div>
                       <div style={{ fontSize: "0.82rem", fontWeight: 700, marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{worstCall.title}</div>
-                      {worstCall.targetPct && <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#ef4444" }}>{worstCall.targetPct}</div>}
+                      {worstCall.targetPct && <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#fff" }}>{worstCall.targetPct}</div>}
                     </div>
                   )}
                 </div>
@@ -865,7 +865,7 @@ export default function AlphaPage() {
         <div style={{ position: "fixed", inset: 0, zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.6)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", padding: 24 }}
           onClick={e => { if (e.target === e.currentTarget) setShowCreateModal(false) }}
         >
-          <div style={{ width: "100%", maxWidth: 520, background: "rgba(10,20,32,0.95)", border: "1px solid rgba(124,58,237,0.3)", borderRadius: 24, padding: 32, boxShadow: "0 24px 80px rgba(0,0,0,0.6)", position: "relative" }}>
+          <div style={{ width: "100%", maxWidth: 520, background: "rgba(10,20,32,0.95)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 24, padding: 32, boxShadow: "0 24px 80px rgba(0,0,0,0.6)", position: "relative" }}>
             <button onClick={() => setShowCreateModal(false)} style={{ position: "absolute", top: 24, right: 24, background: "rgba(255,255,255,0.05)", border: "none", borderRadius: "50%", width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center", color: "var(--muted)", cursor: "pointer" }}>✕</button>
 
             <h2 style={{ margin: "0 0 24px", fontSize: "1.3rem", fontFamily: "var(--font-display)" }}>📡 Post a New Alpha Call</h2>

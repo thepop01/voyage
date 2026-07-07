@@ -121,7 +121,7 @@ export function LoginForm() {
             borderRadius: "12px",
             fontSize: "1rem",
             fontWeight: 700,
-            background: "linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)",
+            background: "#fff",
             border: "1px solid rgba(255, 255, 255, 0.3)",
             boxShadow: "0 8px 20px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4)",
             color: "#ffffff",
@@ -133,7 +133,7 @@ export function LoginForm() {
           {isLoading === 'credentials' ? (
             <div style={{ width: 16, height: 16, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.4)", borderTopColor: "#fff", animation: "spin 1s linear infinite" }} />
           ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#3b82f6" stroke="#bfdbfe" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="#bfdbfe" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           )}
           Test Login (Admin)
         </button>

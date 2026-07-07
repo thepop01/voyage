@@ -35,21 +35,21 @@ export default function AdminPage() {
   }
 
   const tabs = [
-    { id: "campaigns", label: "Manage Campaigns", icon: "📋" },
-    { id: "create", label: "Create Campaign", icon: "✨" },
+    { id: "campaigns", label: "Manage Campaigns", icon: "" },
+    { id: "create", label: "Create Campaign", icon: "" },
     { id: "submissions", label: "Review Submissions", icon: "✅" },
-    { id: "raffles", label: "Manage Raffles", icon: "🎟️" },
-    { id: "engage", label: "Manage Engage Tasks", icon: "⚡" },
-    { id: "announcements", label: "Manage Announcements", icon: "📢" },
-    { id: "users", label: "Users & Access", icon: "👥" }
+    { id: "raffles", label: "Manage Raffles", icon: "" },
+    { id: "engage", label: "Manage Engage Tasks", icon: "" },
+    { id: "announcements", label: "Manage Announcements", icon: "" },
+    { id: "users", label: "Users & Access", icon: "" }
   ]
 
   return (
     <div style={{ paddingBottom: 100, maxWidth: 1200, margin: "0 auto" }}>
       <div style={{ marginBottom: 40, display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}>
         <div>
-          <h1 style={{ fontSize: "2.5rem", marginBottom: 8, color: "var(--danger)", display: "flex", alignItems: "center", gap: 12 }}>
-            <span style={{ fontSize: "2rem" }}>🛡️</span>
+          <h1 style={{ fontSize: "2.5rem", marginBottom: 8, color: "#fff", display: "flex", alignItems: "center", gap: 12 }}>
+            <span style={{ fontSize: "2rem" }}></span>
             Admin Command Center
           </h1>
           <p style={{ color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em", fontSize: "0.85rem", margin: 0 }}>
@@ -106,7 +106,7 @@ export default function AdminPage() {
                       </div>
                     </div>
                     <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-                      <span style={{ padding: "4px 12px", borderRadius: 100, fontSize: "0.75rem", fontWeight: 700, background: c.status === "Active" ? "rgba(16,185,129,0.1)" : "rgba(255,255,255,0.1)", color: c.status === "Active" ? "#10b981" : "var(--muted)" }}>
+                      <span style={{ padding: "4px 12px", borderRadius: 100, fontSize: "0.75rem", fontWeight: 700, background: c.status === "Active" ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.1)", color: c.status === "Active" ? "#fff" : "var(--muted)" }}>
                         {c.status}
                       </span>
                       <button className="glass-button" onClick={() => alert("Edit functionality is currently mocked!")} style={{ padding: "6px 16px", borderRadius: 6, fontSize: "0.8rem" }}>Edit</button>
@@ -154,7 +154,7 @@ export default function AdminPage() {
                     <input type="number" className="glass-input" placeholder="e.g. 50" />
                   </div>
                 </div>
-                <button type="button" className="glass-button" style={{ marginTop: 16, padding: "16px", background: "rgba(220,38,38,0.15)", color: "#fca5a5", border: "1px solid rgba(220,38,38,0.3)", borderRadius: 8, fontSize: "1rem", fontWeight: 700 }}>
+                <button type="button" className="glass-button" style={{ marginTop: 16, padding: "16px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 8, fontSize: "1rem", fontWeight: 700 }}>
                   Publish Campaign
                 </button>
               </form>
@@ -216,7 +216,7 @@ export default function AdminPage() {
                 <hr style={{ border: "none", borderBottom: "1px solid var(--border)", margin: "8px 0" }} />
                 <div style={{ display: "flex", justifyContent: "flex-end", gap: 16 }}>
                   <button type="button" className="glass-button" style={{ padding: "12px 24px", color: "var(--fg-light)" }}>Save Draft</button>
-                  <button type="submit" className="glass-button" style={{ background: "rgba(220,38,38,0.2)", color: "#fca5a5", border: "1px solid rgba(220,38,38,0.3)", padding: "12px 32px", fontWeight: 700 }}>Create Raffle</button>
+                  <button type="submit" className="glass-button" style={{ background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", padding: "12px 32px", fontWeight: 700 }}>Create Raffle</button>
                 </div>
               </form>
             </div>
@@ -247,7 +247,7 @@ export default function AdminPage() {
                       <div style={{ fontWeight: 600, fontSize: "1.1rem", marginBottom: 6 }}>{task.title}</div>
                       <div style={{ fontSize: "0.8rem", color: "var(--muted)", display: "flex", gap: 16 }}>
                         <span>Type: <span style={{ color: "var(--fg-light)" }}>{task.type}</span></span>
-                        <span>Reward: <span style={{ color: "var(--accent)" }}>{task.reward}</span></span>
+                        <span>Reward: <span style={{ color: "#fff" }}>{task.reward}</span></span>
                       </div>
                     </div>
                     <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -257,7 +257,7 @@ export default function AdminPage() {
                 ))}
               </div>
 
-              <button className="glass-button" style={{ padding: "12px 24px", background: "rgba(124, 58, 237, 0.1)", color: "#a78bfa", border: "1px solid rgba(124, 58, 237, 0.3)" }}>
+              <button className="glass-button" style={{ padding: "12px 24px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)" }}>
                 + Add New Task
               </button>
             </div>
@@ -278,7 +278,7 @@ export default function AdminPage() {
                     <div>
                       <div style={{ fontWeight: 600, fontSize: "1.1rem", marginBottom: 6 }}>{ann.title}</div>
                       <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
-                        Status: <span style={{ color: ann.status === "Active" ? "#10b981" : "var(--muted)" }}>{ann.status}</span>
+                        Status: <span style={{ color: ann.status === "Active" ? "#fff" : "var(--muted)" }}>{ann.status}</span>
                       </div>
                     </div>
                     <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -288,7 +288,7 @@ export default function AdminPage() {
                 ))}
               </div>
 
-              <button className="glass-button" style={{ padding: "12px 24px", background: "rgba(124, 58, 237, 0.1)", color: "#a78bfa", border: "1px solid rgba(124, 58, 237, 0.3)" }}>
+              <button className="glass-button" style={{ padding: "12px 24px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.15)" }}>
                 + New Announcement
               </button>
             </div>

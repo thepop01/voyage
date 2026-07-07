@@ -231,9 +231,9 @@ export default function PolymarketTrackerPage() {
   }, [filteredTrades])
 
   const statusColor = (s: TradeStatus) => {
-    if (s === "OPEN") return { color: "#a78bfa", bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.3)" }
-    if (s === "WON" || s === "REDEEMED") return { color: "#10b981", bg: "rgba(16,185,129,0.1)", border: "rgba(16,185,129,0.3)" }
-    return { color: "#ef4444", bg: "rgba(239,68,68,0.1)", border: "rgba(239,68,68,0.3)" }
+    if (s === "OPEN") return { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(167,139,250,0.3)" }
+    if (s === "WON" || s === "REDEEMED") return { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(255,255,255,0.15)" }
+    return { color: "#fff", bg: "rgba(255,255,255,0.08)", border: "rgba(239,68,68,0.3)" }
   }
 
   return (
@@ -255,7 +255,7 @@ export default function PolymarketTrackerPage() {
             background: "rgba(124,58,237,0.2)", border: "1px solid rgba(124,58,237,0.35)",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: "1.6rem",
-          }}>🔮</div>
+          }}></div>
           <div>
             <h1 style={{ margin: 0, fontSize: "1.6rem", fontWeight: 800, fontFamily: "var(--font-display)" }}>Polymarket Tracker</h1>
             <p style={{ margin: 0, fontSize: "0.8rem", color: "var(--muted)" }}>Full trade history and real-time position monitoring</p>
@@ -268,7 +268,7 @@ export default function PolymarketTrackerPage() {
               padding: "10px 18px", borderRadius: 12,
               background: showSettings ? "rgba(124,58,237,0.2)" : "rgba(255,255,255,0.05)",
               border: `1px solid ${showSettings ? "rgba(124,58,237,0.4)" : "rgba(255,255,255,0.1)"}`,
-              color: showSettings ? "#93c5fd" : "var(--fg-light)",
+              color: showSettings ? "#fff" : "var(--fg-light)",
               fontSize: "0.8rem", fontWeight: 600, cursor: "pointer",
               display: "flex", alignItems: "center", gap: 6, transition: "all 0.2s",
             }}
@@ -293,7 +293,7 @@ export default function PolymarketTrackerPage() {
               <span style={{ fontSize: "0.85rem", color: "var(--fg-light)" }}>Alert when a tracked wallet opens a new position</span>
               <div onClick={() => setAlertNewPosition(!alertNewPosition)} style={{
                 width: 40, height: 22, borderRadius: 100, cursor: "pointer",
-                background: alertNewPosition ? "#7c3aed" : "rgba(255,255,255,0.1)",
+                background: alertNewPosition ? "#fff" : "rgba(255,255,255,0.1)",
                 border: `1px solid ${alertNewPosition ? "rgba(124,58,237,0.6)" : "rgba(255,255,255,0.15)"}`,
                 position: "relative", transition: "all 0.2s",
               }}>
@@ -308,7 +308,7 @@ export default function PolymarketTrackerPage() {
               <span style={{ fontSize: "0.85rem", color: "var(--fg-light)" }}>Alert when a market resolves</span>
               <div onClick={() => setAlertResolution(!alertResolution)} style={{
                 width: 40, height: 22, borderRadius: 100, cursor: "pointer",
-                background: alertResolution ? "#7c3aed" : "rgba(255,255,255,0.1)",
+                background: alertResolution ? "#fff" : "rgba(255,255,255,0.1)",
                 border: `1px solid ${alertResolution ? "rgba(124,58,237,0.6)" : "rgba(255,255,255,0.15)"}`,
                 position: "relative", transition: "all 0.2s",
               }}>
@@ -376,7 +376,7 @@ export default function PolymarketTrackerPage() {
               style={{
                 padding: "6px 12px", borderRadius: 8, border: "none",
                 background: timeRange === t.value ? "rgba(124,58,237,0.2)" : "transparent",
-                color: timeRange === t.value ? "#93c5fd" : "var(--muted)",
+                color: timeRange === t.value ? "#fff" : "var(--muted)",
                 fontSize: "0.72rem", fontWeight: 700, cursor: "pointer",
                 transition: "all 0.15s",
               }}
@@ -397,7 +397,7 @@ export default function PolymarketTrackerPage() {
               style={{
                 padding: "6px 12px", borderRadius: 8, border: "none",
                 background: categoryFilter === cat ? "rgba(124,58,237,0.2)" : "transparent",
-                color: categoryFilter === cat ? "#93c5fd" : "var(--muted)",
+                color: categoryFilter === cat ? "#fff" : "var(--muted)",
                 fontSize: "0.72rem", fontWeight: 700, cursor: "pointer",
                 transition: "all 0.15s",
               }}
@@ -409,10 +409,10 @@ export default function PolymarketTrackerPage() {
       {/* ─── Summary Stats Row ─────────────────────────── */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14, marginBottom: 28 }}>
         {[
-          { label: "Total P&L", value: `${stats.totalPnl >= 0 ? "+" : ""}$${Math.abs(stats.totalPnl).toLocaleString()}`, color: stats.totalPnl >= 0 ? "#10b981" : "#ef4444" },
-          { label: "Open Positions", value: stats.openCount.toString(), color: "#a78bfa" },
-          { label: "Win Rate", value: `${stats.winRate}%`, color: stats.winRate >= 60 ? "#10b981" : "#a78bfa" },
-          { label: "Total Volume", value: `$${stats.totalVolume.toLocaleString()}`, color: "#7c3aed" },
+          { label: "Total P&L", value: `${stats.totalPnl >= 0 ? "+" : ""}$${Math.abs(stats.totalPnl).toLocaleString()}`, color: stats.totalPnl >= 0 ? "#fff" : "#fff" },
+          { label: "Open Positions", value: stats.openCount.toString(), color: "#fff" },
+          { label: "Win Rate", value: `${stats.winRate}%`, color: stats.winRate >= 60 ? "#fff" : "#fff" },
+          { label: "Total Volume", value: `$${stats.totalVolume.toLocaleString()}`, color: "#fff" },
         ].map((s, i) => (
           <div key={i} style={{
             padding: "18px 20px", borderRadius: 16,
@@ -443,7 +443,7 @@ export default function PolymarketTrackerPage() {
               background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)",
             }}>
               <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>No wallets connected.</p>
-              <Link href="/profile" style={{ color: "#7c3aed", fontSize: "0.85rem", fontWeight: 600 }}>Add wallets in Profile →</Link>
+              <Link href="/profile" style={{ color: "#fff", fontSize: "0.85rem", fontWeight: 600 }}>Add wallets in Profile →</Link>
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -484,9 +484,9 @@ export default function PolymarketTrackerPage() {
                         <div>
                           <span style={{
                             padding: "3px 10px", borderRadius: 8,
-                            background: trade.side === "Yes" ? "rgba(167,139,250,0.12)" : "rgba(239,68,68,0.1)",
-                            border: `1px solid ${trade.side === "Yes" ? "rgba(167,139,250,0.3)" : "rgba(239,68,68,0.25)"}`,
-                            color: trade.side === "Yes" ? "#a78bfa" : "#ef4444",
+                            background: trade.side === "Yes" ? "rgba(167,139,250,0.12)" : "rgba(255,255,255,0.08)",
+                            border: `1px solid ${trade.side === "Yes" ? "rgba(167,139,250,0.3)" : "rgba(255,255,255,0.15)"}`,
+                            color: trade.side === "Yes" ? "#fff" : "#fff",
                             fontSize: "0.72rem", fontWeight: 700,
                           }}>{trade.side}</span>
                         </div>
@@ -504,7 +504,7 @@ export default function PolymarketTrackerPage() {
                             <span style={{ fontWeight: 600 }}>{(trade.currentPrice * 100).toFixed(0)}¢</span>
                           </div>
                         )}
-                        <div style={{ marginLeft: "auto", fontSize: "0.88rem", fontWeight: 800, fontFamily: "var(--font-display)", color: trade.pnl >= 0 ? "#10b981" : "#ef4444" }}>
+                        <div style={{ marginLeft: "auto", fontSize: "0.88rem", fontWeight: 800, fontFamily: "var(--font-display)", color: trade.pnl >= 0 ? "#fff" : "#fff" }}>
                           {trade.pnl >= 0 ? "+" : ""}${Math.abs(trade.pnl).toLocaleString()}
                         </div>
                       </div>
@@ -538,7 +538,7 @@ export default function PolymarketTrackerPage() {
                         <div style={{ marginBottom: 16 }}>
                           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10 }}>
                             <ExternalIcon />
-                            <span style={{ fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#7c3aed" }}>Position History</span>
+                            <span style={{ fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fff" }}>Position History</span>
                           </div>
                           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.78rem" }}>
                             <thead>
@@ -552,7 +552,7 @@ export default function PolymarketTrackerPage() {
                               {trade.partialHistory?.map((h, i) => (
                                 <tr key={i}>
                                   <td style={{ padding: "8px 10px" }}>
-                                    <span style={{ padding: "2px 8px", background: "rgba(167,139,250,0.1)", border: "1px solid rgba(167,139,250,0.25)", borderRadius: 100, fontSize: "0.65rem", fontWeight: 700, color: "#a78bfa" }}>{h.action}</span>
+                                    <span style={{ padding: "2px 8px", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(167,139,250,0.25)", borderRadius: 100, fontSize: "0.65rem", fontWeight: 700, color: "#fff" }}>{h.action}</span>
                                   </td>
                                   <td style={{ padding: "8px 10px", fontWeight: 700 }}>${h.amount.toLocaleString()}</td>
                                   <td style={{ padding: "8px 10px", color: "var(--fg-light)" }}>{(h.price * 100).toFixed(0)}¢</td>
@@ -567,8 +567,8 @@ export default function PolymarketTrackerPage() {
                         <a href="https://polymarket.com" target="_blank" rel="noreferrer" style={{
                           display: "inline-flex", alignItems: "center", gap: 6,
                           padding: "8px 16px", borderRadius: 10,
-                          background: "rgba(124,58,237,0.15)", border: "1px solid rgba(124,58,237,0.3)",
-                          color: "#93c5fd", fontSize: "0.78rem", fontWeight: 700,
+                          background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)",
+                          color: "#fff", fontSize: "0.78rem", fontWeight: 700,
                           textDecoration: "none", transition: "all 0.15s",
                         }}>
                           <ExternalIcon /> View on Polymarket
@@ -591,7 +591,7 @@ export default function PolymarketTrackerPage() {
             background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
           }}>
             <div style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", marginBottom: 4 }}>Analytics</div>
-            <h3 style={{ fontSize: "0.95rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 16 }}>📊 Category Breakdown</h3>
+            <h3 style={{ fontSize: "0.95rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 16 }}> Category Breakdown</h3>
             {categoryBreakdown.length === 0 ? (
               <p style={{ fontSize: "0.78rem", color: "var(--muted)" }}>No data yet.</p>
             ) : (
@@ -604,7 +604,7 @@ export default function PolymarketTrackerPage() {
                     </div>
                     <span style={{
                       fontSize: "0.82rem", fontWeight: 700, fontFamily: "var(--font-display)",
-                      color: data.pnl >= 0 ? "#10b981" : "#ef4444",
+                      color: data.pnl >= 0 ? "#fff" : "#fff",
                     }}>
                       {data.pnl >= 0 ? "+" : ""}${Math.abs(data.pnl).toLocaleString()}
                     </span>
@@ -620,20 +620,20 @@ export default function PolymarketTrackerPage() {
             background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
           }}>
             <div style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", marginBottom: 4 }}>Momentum</div>
-            <h3 style={{ fontSize: "0.95rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 16 }}>🔥 Current Streak</h3>
+            <h3 style={{ fontSize: "0.95rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 16 }}> Current Streak</h3>
             {currentStreak.type === "none" ? (
               <p style={{ fontSize: "0.78rem", color: "var(--muted)" }}>No resolved trades yet.</p>
             ) : (
               <div style={{
                 padding: "14px 16px", borderRadius: 12,
                 background: currentStreak.type === "WON" ? "rgba(16,185,129,0.08)" : "rgba(239,68,68,0.08)",
-                border: `1px solid ${currentStreak.type === "WON" ? "rgba(16,185,129,0.2)" : "rgba(239,68,68,0.2)"}`,
+                border: `1px solid ${currentStreak.type === "WON" ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.15)"}`,
                 textAlign: "center",
               }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: "2rem", fontWeight: 800, color: currentStreak.type === "WON" ? "#10b981" : "#ef4444" }}>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: "2rem", fontWeight: 800, color: currentStreak.type === "WON" ? "#fff" : "#fff" }}>
                   {currentStreak.count}
                 </div>
-                <div style={{ fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase", color: currentStreak.type === "WON" ? "#10b981" : "#ef4444" }}>
+                <div style={{ fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase", color: currentStreak.type === "WON" ? "#fff" : "#fff" }}>
                   {currentStreak.type === "WON" ? "Win" : "Loss"} Streak
                 </div>
               </div>
@@ -646,7 +646,7 @@ export default function PolymarketTrackerPage() {
             background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
           }}>
             <div style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--muted)", marginBottom: 4 }}>Best Trades</div>
-            <h3 style={{ fontSize: "0.95rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 16 }}>🏆 Top Performers</h3>
+            <h3 style={{ fontSize: "0.95rem", fontWeight: 700, fontFamily: "var(--font-display)", marginBottom: 16 }}> Top Performers</h3>
             {topPerformers.length === 0 ? (
               <p style={{ fontSize: "0.78rem", color: "var(--muted)" }}>No winning trades yet.</p>
             ) : (
@@ -661,7 +661,7 @@ export default function PolymarketTrackerPage() {
                       <div style={{ fontSize: "0.8rem", fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{t.market}</div>
                       <div style={{ fontSize: "0.65rem", color: "var(--muted)" }}>{t.side} · ${t.amount.toLocaleString()}</div>
                     </div>
-                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "0.95rem", color: "#10b981", flexShrink: 0 }}>
+                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "0.95rem", color: "#fff", flexShrink: 0 }}>
                       +${t.pnl.toLocaleString()}
                     </div>
                   </div>

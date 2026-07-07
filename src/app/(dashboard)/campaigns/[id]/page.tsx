@@ -21,11 +21,11 @@ const bannerIcons = [
 ]
 
 const typeColors: Record<string, { bg: string; border: string; text: string }> = {
-  hybrid:    { bg: "rgba(124,58,237,0.1)",  border: "rgba(124,58,237,0.3)",  text: "var(--accent)" },
-  raffle:    { bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.3)", text: "#a78bfa" },
-  technical: { bg: "rgba(167,139,250,0.1)",   border: "rgba(167,139,250,0.3)",   text: "var(--success)" },
-  manual:    { bg: "rgba(167,139,250,0.1)",  border: "rgba(167,139,250,0.3)",  text: "var(--warning)" },
-  fcfs:      { bg: "rgba(236,72,153,0.1)",  border: "rgba(236,72,153,0.3)",  text: "#ec4899" },
+  hybrid:    { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  raffle:    { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  technical: { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  manual:    { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
+  fcfs:      { bg: "rgba(255,255,255,0.08)",  border: "rgba(255,255,255,0.15)",  text: "#fff" },
 }
 
 export default async function CampaignDetailPage({ params }: { params: { id: string } }) {
@@ -111,7 +111,7 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
               borderRadius: 100,
               background: isClosed ? "rgba(239,68,68,0.2)" : isDraft ? "rgba(255,255,255,0.1)" : "rgba(167,139,250,0.15)",
               border: `1px solid ${isClosed ? "rgba(239,68,68,0.3)" : isDraft ? "var(--border)" : "rgba(167,139,250,0.3)"}`,
-              color: isClosed ? "var(--danger)" : isDraft ? "var(--muted)" : "var(--success)",
+              color: "#fff",
               backdropFilter: "blur(12px)",
             }}>
               {isClosed ? "Closed" : isDraft ? "Draft" : "Active Campaign"}
@@ -161,7 +161,7 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
         /* Winners Mode: Show winners, hide details/submission */
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <h3 style={{ fontSize: "1.4rem", marginBottom: 24, color: "var(--fg)", display: "flex", alignItems: "center", gap: 12 }}>
-            <span style={{ width: 14, height: 14, background: "var(--warning)", borderRadius: 3, display: "inline-block", boxShadow: "0 0 12px var(--warning)" }} />
+            <span style={{ width: 14, height: 14, background: "#fff", borderRadius: 3, display: "inline-block", boxShadow: "0 0 12px #fff" }} />
             Campaign Winners Announced
           </h3>
           
@@ -176,10 +176,10 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
                   borderRadius: 12
                 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: "50%", background: "linear-gradient(135deg, var(--accent), #60a5fa)" }} />
+                    <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#fff" }} />
                     <span style={{ fontSize: "1rem", fontWeight: 600, color: "var(--fg)" }}>{winner.username}</span>
                   </div>
-                  <span style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--warning)", fontFamily: "var(--font-display)" }}>{winner.reward}</span>
+                  <span style={{ fontSize: "1.1rem", fontWeight: 700, color: "#fff", fontFamily: "var(--font-display)" }}>{winner.reward}</span>
                 </div>
               ))}
             </div>
@@ -201,19 +201,19 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
                   fontSize: "1rem",
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  color: "#c4b5fd",
-                  background: "rgba(124,58,237,0.12)",
-                  border: "1px solid rgba(139,92,246,0.3)",
+                   color: "#fff",
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.15)",
                   display: "inline-block",
                   marginTop: 4,
                 }}>
-                  🏆 {campaign.prize_name || (campaign.reward_pool ? `$${campaign.reward_pool}` : "TBD")}
+                  {campaign.prize_name || (campaign.reward_pool ? `$${campaign.reward_pool}` : "TBD")}
                 </div>
               </div>
               
               <div className="glass-panel" style={{ padding: "20px 24px", textAlign: "center" }}>
                 <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--muted)", fontWeight: 700, letterSpacing: "0.05em", marginBottom: 8 }}>Deadline</div>
-                <div style={{ fontSize: "1.4rem", fontFamily: "var(--font-display)", fontWeight: 700, color: isUrgent ? "var(--warning)" : "var(--fg)", marginTop: 8 }}>
+                <div style={{ fontSize: "1.4rem", fontFamily: "var(--font-display)", fontWeight: 700, color: "#fff", marginTop: 8 }}>
                   {new Date(campaign.ends_at || new Date()).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
             </div>
 
             <h3 style={{ fontSize: "1.2rem", marginBottom: 20, color: "var(--fg)", display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ width: 12, height: 12, background: "var(--accent)", borderRadius: 2, display: "inline-block" }} />
+              <span style={{ width: 12, height: 12, background: "#fff", borderRadius: 2, display: "inline-block" }} />
               Mission Requirements
             </h3>
             
@@ -249,7 +249,7 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
                         background: "rgba(124,58,237,0.15)",
                         border: "1px solid rgba(124,58,237,0.3)",
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        color: "var(--accent)",
+                        color: "#fff",
                         fontSize: "0.75rem",
                         fontWeight: 700,
                         flexShrink: 0
@@ -269,7 +269,7 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
             <div className="glass-panel" style={{ 
               padding: 32, 
               background: "rgba(10,20,32,0.6)",
-              borderTop: "2px solid var(--accent)",
+              borderTop: "2px solid #fff",
               boxShadow: "0 24px 60px rgba(0,0,0,0.6)"
             }}>
               <h3 style={{ fontSize: "1.2rem", marginBottom: 8, color: "var(--fg)" }}>Submit Entry</h3>
@@ -331,7 +331,7 @@ export default async function CampaignDetailPage({ params }: { params: { id: str
                     style={{ 
                       width: "100%", 
                       padding: 16, 
-                      background: isClosed ? "rgba(255,255,255,0.05)" : "linear-gradient(135deg, var(--accent), #60a5fa)",
+                      background: isClosed ? "rgba(255,255,255,0.05)" : "#fff",
                       border: "none",
                       color: isClosed ? "var(--muted)" : "#fff",
                       fontWeight: 700,

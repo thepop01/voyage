@@ -5,10 +5,10 @@ export const metadata = {
 
 export default function DashboardPage() {
   const stats = [
-    { value: "#08", label: "Rank", icon: "🏆", accent: "var(--warning)" },
-    { value: "3,120", label: "Points", icon: "⚡", accent: "var(--accent)" },
-    { value: "92%", label: "Score", icon: "📊", accent: "var(--success)" },
-    { value: "$450", label: "Pending", icon: "💰", accent: "#a78bfa" },
+    { value: "#08", label: "Rank", icon: "", accent: "var(--warning)" },
+    { value: "3,120", label: "Points", icon: "", accent: "var(--accent)" },
+    { value: "92%", label: "Score", icon: "", accent: "var(--success)" },
+    { value: "$450", label: "Pending", icon: "", accent: "#fff" },
   ]
 
   const campaigns = [
@@ -21,17 +21,17 @@ export default function DashboardPage() {
   ]
 
   const activity = [
-    { time: "10:42 AM", action: "Proof Accepted", detail: "L2 Load Test", reward: "+120 REP", color: "var(--success)" },
-    { time: "09:15 AM", action: "Proof Submitted", detail: "DeFi Protocol v2 · Liquidity Migration", reward: null, color: "var(--accent)" },
-    { time: "Yesterday", action: "Reward Distributed", detail: "Wallet ending in 4x9A", reward: "$50 USDC", color: "#a78bfa" },
-    { time: "2 Days Ago", action: "Proof Accepted", detail: "Solana L3 Alpha", reward: "+50 REP", color: "var(--success)" },
+    { time: "10:42 AM", action: "Proof Accepted", detail: "L2 Load Test", reward: "+120 REP", color: "#fff" },
+    { time: "09:15 AM", action: "Proof Submitted", detail: "DeFi Protocol v2 · Liquidity Migration", reward: null, color: "#fff" },
+    { time: "Yesterday", action: "Reward Distributed", detail: "Wallet ending in 4x9A", reward: "$50 USDC", color: "#fff" },
+    { time: "2 Days Ago", action: "Proof Accepted", detail: "Solana L3 Alpha", reward: "+50 REP", color: "#fff" },
   ]
 
   const entries = [
-    { name: "DeFi Protocol v2", date: "Today", status: "Pending", score: "—", color: "var(--warning)" },
-    { name: "L2 Load Test", date: "Today", status: "Accepted", score: "98/100", color: "var(--success)" },
-    { name: "Solana L3 Alpha", date: "Oct 12", status: "Accepted", score: "100/100", color: "var(--success)" },
-    { name: "NFT Mint Bot", date: "Oct 10", status: "Accepted", score: "92/100", color: "var(--success)" },
+    { name: "DeFi Protocol v2", date: "Today", status: "Pending", score: "—", color: "#fff" },
+    { name: "L2 Load Test", date: "Today", status: "Accepted", score: "98/100", color: "#fff" },
+    { name: "Solana L3 Alpha", date: "Oct 12", status: "Accepted", score: "100/100", color: "#fff" },
+    { name: "NFT Mint Bot", date: "Oct 10", status: "Accepted", score: "92/100", color: "#fff" },
   ]
 
   return (
@@ -73,7 +73,7 @@ export default function DashboardPage() {
               animation: "pulse 2s ease-in-out infinite",
             }} />
             <div>
-              <div style={{ fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--accent)" }}>
+              <div style={{ fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>
                 Next deadline
               </div>
               <div style={{ fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "var(--fg)" }}>
@@ -257,12 +257,12 @@ export default function DashboardPage() {
                     borderRadius: 100,
                     flexShrink: 0,
                     marginLeft: 16,
-                    background: "rgba(124,58,237,0.12)",
-                    border: "1px solid rgba(139,92,246,0.3)",
-                    color: "#c4b5fd",
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    color: "#fff",
                     fontFamily: "var(--font-display)",
                   }}>
-                    🏆 {c.reward}
+                     {c.reward}
                   </span>
                 </div>
                 <div style={{
@@ -373,7 +373,7 @@ export default function DashboardPage() {
                       <div style={{ fontSize: "0.7rem", color: "var(--muted)" }}>{item.type}</div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                      <span style={{ fontSize: "0.75rem", fontWeight: "bold", color: "var(--accent)" }}>{item.status}</span>
+                      <span style={{ fontSize: "0.75rem", fontWeight: "bold", color: "#fff" }}>{item.status}</span>
                       <a href="/engage" className="glass-button" style={{ padding: "4px 10px", fontSize: "0.7rem", borderRadius: 4, textDecoration: "none" }}>Go</a>
                     </div>
                   </div>
@@ -450,8 +450,8 @@ export default function DashboardPage() {
               <span style={{
                 fontSize: "0.65rem",
                 fontWeight: 600,
-                color: "var(--success)",
-                background: "rgba(167,139,250,0.1)",
+                color: "#fff",
+                background: "rgba(255,255,255,0.08)",
                 padding: "2px 8px",
                 borderRadius: 100,
                 border: "1px solid rgba(167,139,250,0.2)",
@@ -482,11 +482,11 @@ export default function DashboardPage() {
                       borderRadius: 100,
                       fontSize: "0.72rem",
                       fontWeight: 700,
-                      background: "rgba(124,58,237,0.12)",
-                      border: "1px solid rgba(139,92,246,0.3)",
-                      color: "#c4b5fd",
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                      color: "#fff",
                     }}>
-                      🏆 {row.prize}
+                       {row.prize}
                     </span>
                   </td>
                   <td style={{ textAlign: "right" }}>
