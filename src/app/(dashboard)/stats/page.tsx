@@ -343,7 +343,7 @@ export default function StatsPage() {
                       }}>
                         {/* Trophy */}
                         <div style={{ background: trophyColor, width: 44, height: 44, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24, boxShadow: `0 4px 12px ${trophyColor}44` }}>
-                          <TrophyIcon color={isFirst ? "#000" : isSecond ? "#000" : "#fff"} />
+                          <TrophyIcon color={isFirst ? "#000" : isSecond ? "#000" : "#000"} />
                         </div>
                         
                         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "1.5rem", fontWeight: 700, color: "#fff", marginBottom: 4 }}>

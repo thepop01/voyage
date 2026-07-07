@@ -133,23 +133,23 @@ export default function LandingPage() {
           text-transform: uppercase;
           text-decoration: none;
           padding: 14px 36px;
-          background: var(--accent);
-          color: #fff;
+          background: #E6F2DD;
+          color: #000;
           border: none;
           border-radius: 4px;
           cursor: pointer;
           transition: all 0.25s ease;
-          box-shadow: 0 0 24px rgba(217, 119, 87, 0.35);
+          box-shadow: 0 0 24px rgba(230, 242, 221, 0.35);
           min-width: 180px;
           text-align: center;
           display: inline-block;
         }
 
         .btn-launch:hover {
-          background: #e8886a;
-          box-shadow: 0 0 40px rgba(217, 119, 87, 0.55);
+          background: rgba(230, 242, 221, 0.8);
+          box-shadow: 0 0 40px rgba(230, 242, 221, 0.55);
           transform: translateY(-2px);
-          color: #fff;
+          color: #000;
           text-decoration: none;
         }
 

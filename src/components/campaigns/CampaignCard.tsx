@@ -209,10 +209,10 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
               borderRadius: 8,
               textDecoration: "none",
               whiteSpace: "nowrap",
-              background: isActive ? "#fff" : undefined,
+              background: isActive ? "#E6F2DD" : undefined,
               color: isActive ? "#000" : undefined,
               border: isActive ? "none" : undefined,
-              boxShadow: isActive ? "0 3px 12px rgba(255,255,255,0.15)" : undefined,
+              boxShadow: isActive ? "0 3px 12px rgba(230,242,221,0.3)" : undefined,
             }}
           >
             {isActive ? "View →" : isClosed ? "View Results" : "Preview"}
