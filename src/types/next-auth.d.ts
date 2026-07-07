@@ -12,5 +12,8 @@ declare module "next-auth" {
 
   interface User {
     id: string
+    isAdmin?: boolean
+    reputationScore?: number
+    totalPoints?: number
   }
 }

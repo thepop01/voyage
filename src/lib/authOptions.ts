@@ -73,7 +73,7 @@ export const authOptions: NextAuthOptions = {
           // Dummy admin login: mock it if DB is not available
           if (supabaseUrl === "https://placeholder.supabase.co") {
             console.log("Using mock DB for dummy admin")
-            user.isAdmin = true
+            (user as any).isAdmin = true
           } else {
             const { data, error } = await supabase
               .from('users')
