@@ -298,7 +298,7 @@ export default function PolymarketTrackerPage() {
                 position: "relative", transition: "all 0.2s",
               }}>
                 <div style={{
-                  width: 16, height: 16, borderRadius: "50%", background: "#fff",
+                  width: 16, height: 16, borderRadius: "50%", background: "#FBEFEF",
                   position: "absolute", top: 2, left: alertNewPosition ? 20 : 2,
                   transition: "left 0.2s",
                 }} />
@@ -313,7 +313,7 @@ export default function PolymarketTrackerPage() {
                 position: "relative", transition: "all 0.2s",
               }}>
                 <div style={{
-                  width: 16, height: 16, borderRadius: "50%", background: "#fff",
+                  width: 16, height: 16, borderRadius: "50%", background: "#FBEFEF",
                   position: "absolute", top: 2, left: alertResolution ? 20 : 2,
                   transition: "left 0.2s",
                 }} />

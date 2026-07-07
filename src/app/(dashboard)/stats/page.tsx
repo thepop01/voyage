@@ -164,7 +164,7 @@ export default function StatsPage() {
           {/* Announcement Card & Details */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#fff", boxShadow: "0 0 8px #10b981", animation: "pulse 2s infinite" }} />
+              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#FBEFEF", boxShadow: "0 0 8px #10b981", animation: "pulse 2s infinite" }} />
               <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--fg)" }}>
                 Latest Highlights
               </span>

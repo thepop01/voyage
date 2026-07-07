@@ -121,7 +121,7 @@ export function LoginForm() {
             borderRadius: "12px",
             fontSize: "1rem",
             fontWeight: 700,
-            background: "#fff",
+            background: "#FBEFEF",
             border: "1px solid rgba(255, 255, 255, 0.3)",
             boxShadow: "0 8px 20px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4)",
             color: "#ffffff",

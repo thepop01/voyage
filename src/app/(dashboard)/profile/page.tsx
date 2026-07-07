@@ -36,7 +36,7 @@ function WalletManager() {
           <option value="Solana" style={{ color: "var(--bg)" }}>Solana</option>
           <option value="Polygon" style={{ color: "var(--bg)" }}>Polygon</option>
         </select>
-        <button type="submit" className="glass-button" style={{ padding: "14px 24px", borderRadius: 8, background: "#fff", color: "#fff", border: "none" }}>
+        <button type="submit" className="glass-button" style={{ padding: "14px 24px", borderRadius: 8, background: "#FBEFEF", color: "#fff", border: "none" }}>
           Add Wallet
         </button>
       </form>
@@ -113,7 +113,7 @@ export default function ProfilePage() {
         {/* Glow behind avatar */}
         <div style={{ position: "absolute", top: "50%", left: 80, transform: "translate(-50%, -50%)", width: 150, height: 150, background: "var(--accent)", filter: "blur(80px)", opacity: 0.3, pointerEvents: "none" }} />
         
-        <div style={{ width: 120, height: 120, borderRadius: "50%", background: "#fff", padding: 4, flexShrink: 0, position: "relative", zIndex: 1 }}>
+        <div style={{ width: 120, height: 120, borderRadius: "50%", background: "#FBEFEF", padding: 4, flexShrink: 0, position: "relative", zIndex: 1 }}>
           <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
              {session?.user?.image ? (
                <img src={session.user.image} alt="Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />

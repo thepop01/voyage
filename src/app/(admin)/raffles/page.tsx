@@ -158,7 +158,7 @@ export default function AdminRafflesPage() {
             <button type="button" className="glass-button" style={{ padding: "12px 24px", color: "var(--fg-light)" }}>
               Save Draft
             </button>
-            <button type="submit" className="glass-button" style={{ background: "#fff", color: "#000", padding: "12px 32px", fontWeight: 700, border: "none" }}>
+            <button type="submit" className="glass-button" style={{ background: "#FBEFEF", color: "#000", padding: "12px 32px", fontWeight: 700, border: "none" }}>
               Create Raffle
             </button>
           </div>

@@ -226,7 +226,7 @@ export default function NftMintTrackerPage() {
                 position: "relative", transition: "all 0.2s",
               }}>
                 <div style={{
-                  width: 16, height: 16, borderRadius: "50%", background: "#fff",
+                  width: 16, height: 16, borderRadius: "50%", background: "#FBEFEF",
                   position: "absolute", top: 2, left: alertWlConfirmed ? 20 : 2,
                   transition: "left 0.2s",
                 }} />
@@ -241,7 +241,7 @@ export default function NftMintTrackerPage() {
                 position: "relative", transition: "all 0.2s",
               }}>
                 <div style={{
-                  width: 16, height: 16, borderRadius: "50%", background: "#fff",
+                  width: 16, height: 16, borderRadius: "50%", background: "#FBEFEF",
                   position: "absolute", top: 2, left: alertBeforeMint ? 20 : 2,
                   transition: "left 0.2s",
                 }} />
